@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>The Pinegar Barn - Loomis, California</title>
+<meta name="description" content="Book the Barn at Pinegar Farms for your next kids birthday party or event. This small farm boasts a spacious outdoor lawn, pool, orchard, animals, game room, and more to make your next event a blast.">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -53,6 +54,29 @@ body, html {
     min-height: 400px;
   }
 }
+
+/* Custom Spacing Classes */
+.margin-top {margin-top: 1rem;}
+.margin-top--large {margin-top: 2rem;}
+
+/* Customize Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin: 4px 0;
+    line-height: 1.3;
+}
+
+/* Custom Button */
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 </style>
 </head>
 <body>
@@ -86,18 +110,45 @@ body, html {
 
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
-  <h1 class="w3-center">KIDS EVENTS AND BIRTHDAY PARTIES</h1>
-  <h2 class="w3-center">Located in Loomis California</h2>
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <img src="/images/child.jpeg" class="w3-round w3-image" alt="Photo of Me" width="300" height="auto">
+  <h1 class="w3-left">KIDS EVENTS, BIRTHDAY PARTIE, AND MORE</h1>
+  <h2 class="w3-left">Located in Loomis California</h2>
+  <div class="w3-row w3-margin-bottom">
+    <div class="w3-col m4 w3-right margin-top--large">
+      <img src="/images/barn-photos/barn-3.jpeg" class="w3-round w3-image" alt="Kids in bouncy house" height="auto">
     </div>
 
     <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-col m8 w3-hide-small w3-padding-large">
+      <p>Come host your next event at the Barn at Pinegar Farms. Located under 10 minutes from I-80 in Loomis this impressive small farm boasts spacious outdoor areas, exotic pool party atmoshpere, and a large game room located inside the barn for games and activities. It is an amazing setting for kids birthday parties with plenty of room for inflable bounce houses, outdoor entertainment, and room to run.</p>
+      <strong>Amenities:</strong>
+      <ul>
+        <li>Pool</li>
+        <li>Trampoline</li>
+        <li>Open Grassy Area</li>
+        <li>Game Room</li>
+        <li>Barn Space</li>
+        <li>Parking</li>
+      </ul>
+      <hr>
+      <a class="button" href="#contact">Book Your Event Today</a>
+    </div>
+  </div>
+  <h2 class="w3-left">Book Our Magician</h2>
+  <div class="w3-row">
+    <div class="w3-col m4 w3-left margin-top--large">
+      <img src="/images/charlie-and-barb.jpeg" class="w3-round w3-image" alt="Charlie and Barb Showing Magic Trick" height="auto">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m8 w3-hide-small w3-padding-large">
+      <p>We've teamed up with Mr. Illusion himself to make your next birthday party out of this world. If you are interested in booking this great add on please <a href="#contact">contact us</a> for special rates.</p>
+      <ul>
+        <li>Close Up Magic</li>
+        <li>Stage Magic</li>
+        <li>Audience Interaction</li>
+        <li>Highly Recommended</li>
+      </ul>
+      <a class="" href="https://misterillusion.com/">LEARN MORE ABOUT MR. ILLUSION</a>
     </div>
   </div>
 </div>
@@ -105,7 +156,7 @@ body, html {
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">SEE THE FARM</span>
+    <span class="w3-xxlarge w3-text-white w3-wide w3-black w3-padding-large">SEE THE FARM</span>
   </div>
 </div>
 
@@ -117,37 +168,37 @@ body, html {
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
     <div class="w3-col m3">
-      <img src="/images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+      <img src="/images/barn-photos/barn-1.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Picture of barn">
     </div>
 
     <div class="w3-col m3">
-      <img src="/images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      <img src="/images/barn-photos/barn-2.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Farm Animals and Rustic Equipment">
     </div>
 
     <div class="w3-col m3">
-      <img src="/images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+      <img src="/images/barn-photos/barn-3.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bouncy House">
     </div>
 
     <div class="w3-col m3">
-      <img src="/images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+      <img src="/images/barn-photos/barn-4.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Shade Tree with People Under It">
     </div>
   </div>
 
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
-      <img src="/images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+      <img src="/images/barn-photos/barn-5.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool with Trampoline In the Background">
     </div>
 
     <div class="w3-col m3">
-      <img src="/images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+      <img src="/images/barn-photos/barn-6.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Party Buffet">
     </div>
 
     <div class="w3-col m3">
-      <img src="/images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+      <img src="/images/barn-photos/barn-7.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Berries Growing on Farm">
     </div>
 
     <div class="w3-col m3">
-      <img src="/images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+      <img src="/images/barn-photos/barn-8.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Picture of Pool">
     </div>
   </div>
 </div>
@@ -164,24 +215,24 @@ body, html {
 <!-- Third Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container">
   <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+     <span class="w3-xxlarge w3-text-white w3-wide w3-black w3-padding-large">CONTACT</span>
   </div>
 </div>
 
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64" id="contact">
   <h3 class="w3-center">BOOK YOUR EVENT TODAY</h3>
-  <p class="w3-center"><em>I'd love your feedback!</em></p>
+  <p class="w3-center"><em>I am looking forward to helping your plan your next event.</em></p>
 
   <div class="w3-row w3-padding-32 w3-section">
     <div class="w3-col m4 w3-container">
-      <img src="/images/barn-location.png" class="w3-image w3-round" style="width:100%">
+      <img src="/images/barn-location.png" class="w3-image w3-round" style="width:100%" alt="Pin showing location of barn in California">
     </div>
     <div class="w3-col m8 w3-panel">
       <div class="w3-large w3-margin-bottom">
         <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Loomis, CA<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: (916) 224-6742<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: judypinegar@gmail.com<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: (&#057;&#049;&#054;)&#032;&#050;&#050;&#052;&#045;&#054;&#055;&#052;&#050;<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: <a href="mailto:&#106;&#117;&#100;&#121;&#112;&#105;&#110;&#101;&#103;&#097;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;?subject=Event Booking at the Barn">&#106;&#117;&#100;&#121;&#112;&#105;&#110;&#101;&#103;&#097;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a><br>
       </div>
       <p>Please use the form below to contact us with your event needs:</p>
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSch038XFhKSBmzL19Jri5VHZSKooLcub0OAgtTOWG_tY_hGhQ/viewform?embedded=true" width="640" height="850" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
