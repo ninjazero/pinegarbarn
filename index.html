@@ -102,11 +102,86 @@ body, html {
 
 .w3-bar {background-color: #fff;}
 
+/* Layering: navbar above the page bands (z-index 1) and scroll arrow (2); popups above the navbar */
+nav.w3-top {z-index: 10;}
+.w3-modal {z-index: 20;}
+
+/* Navbar as a flex row so every item is vertically centered; venue name pushed right, menu button last */
+#myNavbar {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); /* same as w3-card, shown from page load */
+}
+#myNavbar .nav-brand {
+  order: 1;
+  margin-left: auto;
+  color: #333;
+}
+#myNavbar #menuToggle {order: 2;}
+
 /* Navigation links in a darker shade of the theme pink (w3-button's hover uses !important) */
 nav .w3-bar-item {color: var(--wedding-pink-dark);}
+/* Short pipe dividers between the main nav links, each in a 1px gap outside the links' hover fill */
+.nav-link {
+  position: relative;
+  overflow: visible !important; /* w3-button hides overflow, which would clip the divider */
+}
+.nav-link + .nav-link {margin-left: 1px;}
+.nav-link + .nav-link::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 32%;
+  height: 36%;
+  border-left: 1px solid #ccc;
+}
+/* Venue name in script, flush right; fades in once the hero title scrolls under the navbar */
+.nav-brand {
+  padding: 2px 16px;
+  font-family: "Great Vibes", cursive;
+  font-size: 28px;
+  line-height: 36px;
+  white-space: nowrap;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+/* Small "The" raised to the top of the letters */
+.nav-brand-the {
+  font-size: 0.6em;
+  vertical-align: text-top;
+  position: relative;
+  top: -0.25em;
+}
+.nav-brand.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 600px) {
+  .nav-brand {font-size: 22px;}
+}
+
+/* Hover: no fill (w3-button forces a gray one with !important); text brightens and an underline slides in */
 nav .w3-bar-item:hover {
-  background-color: var(--wedding-pink-dark) !important;
-  color: #fff !important;
+  background-color: transparent !important;
+  color: var(--wedding-pink) !important;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 6px;
+  height: 2px;
+  background-color: var(--wedding-pink);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {transform: scaleX(1);}
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::after {transition: none;}
 }
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -295,12 +370,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Lexend", "Lato", sans-serif;
   font-weight: 600;
   font-size: 40px;
-  line-height: 1.3;
+  line-height: 1.1;
   text-align: center;
 }
-@media (max-width: 600px) {
-  .heading-banner h1 {font-size: 32px;}
+@media (max-width: 870px) {
+  .heading-banner h1 {font-size: 30px;}
 }
+@media (max-width: 600px) {
+  .heading-banner h1 {font-size: 24px;}
+}
+/* Two-tone, two-line heading */
+.banner-line {display: block;}
+.banner-line--accent {color: var(--wedding-pink-dark);}
 /* Small gap between the banner and the about content (overrides w3-padding-64's top) */
 .about-content {padding-top: 2.5rem !important;}
 
@@ -390,6 +471,119 @@ main ul li::before {
   font-size: 18px;
   line-height: 24px; /* matches the note text's first line (15px x 1.6) */
 }
+
+/* Decorative watermarks: faint silhouettes (images/watermarks/) in the section color that bleed off the page edge.
+   Drawn with CSS masks so they take the section's --accent color; purely decorative. */
+main {overflow-x: clip;}
+.about-content, .wedding-section {
+  position: relative;
+  isolation: isolate;
+}
+.about-content::before, .wedding-section::before,
+.pool-party-band::before, .pool-party-band::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--accent);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+/* Barn off the left edge of the first section */
+.about-content::before {
+  top: 60px;
+  left: calc(50% - 50vw - 90px);
+  width: 480px;
+  height: 308px;
+  opacity: 0.05;
+  -webkit-mask-image: url('/images/watermarks/barn.png');
+  mask-image: url('/images/watermarks/barn.png');
+}
+/* Wedding rings off the right edge of the wedding section */
+.wedding-section::before {
+  top: 20px;
+  right: calc(50% - 50vw - 110px);
+  width: 460px;
+  height: 271px;
+  opacity: 0.06;
+  -webkit-mask-image: url('/images/watermarks/rings.png');
+  mask-image: url('/images/watermarks/rings.png');
+}
+/* Palm tree off the left edge and wave off the right edge of the pool band */
+.pool-party-band {
+  overflow: hidden;
+  isolation: isolate;
+}
+.pool-party-band::before {
+  bottom: -20px;
+  left: -80px;
+  width: 420px;
+  height: 342px;
+  opacity: 0.07;
+  -webkit-mask-image: url('/images/watermarks/palm.png');
+  mask-image: url('/images/watermarks/palm.png');
+}
+.pool-party-band::after {
+  top: 30px;
+  right: -140px;
+  width: 560px;
+  height: 217px;
+  opacity: 0.08;
+  -webkit-mask-image: url('/images/watermarks/waves.png');
+  mask-image: url('/images/watermarks/waves.png');
+}
+/* Grapes at the far right of the pink heading banner (the banner's z-index keeps them behind its text) */
+.heading-banner {overflow: hidden;}
+.heading-banner::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: 50%;
+  right: 16px;
+  width: 196px;
+  height: 222px;
+  transform: translateY(-50%);
+  opacity: 0.12;
+  background-color: var(--wedding-pink);
+  -webkit-mask: url('/images/watermarks/grapes.png') no-repeat center / contain;
+  mask: url('/images/watermarks/grapes.png') no-repeat center / contain;
+}
+
+/* Balloons off the right edge beside the magician, in the vendor sections' gray */
+.vendors-content {
+  position: relative;
+  isolation: isolate;
+}
+.vendors-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: 40px;
+  right: calc(50% - 50vw - 70px);
+  width: 360px;
+  height: 392px;
+  opacity: 0.07;
+  background-color: #6b6b6b;
+  -webkit-mask: url('/images/watermarks/balloons.png') no-repeat center / contain;
+  mask: url('/images/watermarks/balloons.png') no-repeat center / contain;
+}
+/* No spare space beside the content on phones */
+@media (max-width: 600px) {
+  .about-content::before, .wedding-section::before,
+  .pool-party-band::before, .pool-party-band::after,
+  .vendors-content::before, .heading-banner::after {display: none;}
+}
+
+/* Footer: solid dark pink, matching the navigation links */
+.site-footer {
+  background-color: var(--wedding-pink-dark);
+  color: #fff;
+}
+.site-footer a {color: #fff;}
 
 /* Text for screen readers only */
 .sr-only {
@@ -581,6 +775,7 @@ main ul li::before {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 .collage-link:hover {background-color: #f1f1f1;}
+.collage-link {white-space: nowrap;}
 
 @media (max-width: 600px) {
   .pool-collage {
@@ -602,10 +797,11 @@ main ul li::before {
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu" aria-label="Menu" aria-controls="navDemo" aria-expanded="false" id="menuToggle">
       <i aria-hidden="true" class="fa fa-bars"></i>
     </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i aria-hidden="true" class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i aria-hidden="true" class="fa fa-th"></i> PICTURES</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i aria-hidden="true" class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#home" class="w3-bar-item w3-right nav-brand" id="navBrand"><span class="nav-brand-the">The</span> Barn at Pinegar Farms</a>
+    <a href="#home" class="w3-bar-item w3-button nav-link">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small nav-link">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small nav-link">PICTURES</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small nav-link">CONTACT</a>
   </div>
 
   <!-- Navbar on small screens -->
@@ -626,14 +822,14 @@ main ul li::before {
     <img src="/images/barn-photos/pool-party-6.jpg" alt="Evening pool party">
     <img src="/images/barn-photos/barn-29.jpg" alt="Red grapes on the vine">
     <img src="/images/barn-photos/luau-shower-5.jpg" alt="Balloon arch on the lawn">
-    <img src="/images/barn-photos/property-15.jpg" alt="Vineyard view">
+    <img src="/images/barn-photos/property-23.jpg" alt="Aerial view of the barn and vineyard">
   </div>
   <a class="scroll-down" href="#about" aria-label="Scroll down to content"><i aria-hidden="true" class="fa fa-chevron-down"></i></a>
 </div>
 
 <!-- Full width green banner with the main heading -->
 <div class="heading-banner" id="about">
-  <h1 class="w3-content w3-container">Weddings, Kids Events, Birthday Parties, Camp-Outs, Reunions, and More...</h1>
+  <h1 class="w3-content w3-container"><span class="banner-line">Weddings, Kids Events, Birthday Parties</span><span class="sr-only">, </span><span class="banner-line banner-line--accent">Camp-Outs, Reunions, and More...</span></h1>
 </div>
 
 <!-- Container (About Section) -->
@@ -650,7 +846,7 @@ main ul li::before {
         <img src="/images/barn-photos/barn-35.jpg" alt="The barn">
         <div class="collage-last">
           <img src="/images/barn-photos/barn-37.jpg" alt="Game room with billiards table">
-          <a class="collage-link" href="#portfolio"><i aria-hidden="true" class="fa fa-th"></i> More photos</a>
+          <a class="collage-link" href="#portfolio" aria-label="More photos"><i aria-hidden="true" class="fa fa-th"></i> More</a>
         </div>
       </div>
     </div>
@@ -684,7 +880,7 @@ main ul li::before {
           <img src="/images/barn-photos/wedding-tables.jpg" alt="Staged table for wedding">
           <div class="collage-last">
             <img src="/images/barn-photos/wedding-grounds.jpg" alt="Picture of wedding grounds">
-            <a class="collage-link" href="#portfolio" onclick="document.getElementById('weddingsTab').click()"><i aria-hidden="true" class="fa fa-th"></i> More photos</a>
+            <a class="collage-link" href="#portfolio" onclick="document.getElementById('weddingsTab').click()" aria-label="More wedding photos"><i aria-hidden="true" class="fa fa-th"></i> More</a>
           </div>
         </div>
       </div>
@@ -740,7 +936,7 @@ main ul li::before {
   </div>
 </div>
 
-<div class="w3-content w3-container w3-padding-64">
+<div class="w3-content w3-container w3-padding-64 vendors-content">
   <h2 class="w3-left section-heading section-heading--muted"><span class="heading-icon heading-icon--muted"><i aria-hidden="true" class="fa fa-magic"></i></span>Book Our Magician</h2>
   <div class="w3-row section-end">
     <div class="w3-col m4 w3-left margin-top--large">
@@ -811,7 +1007,7 @@ main ul li::before {
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-xxlarge w3-text-white w3-wide w3-black w3-padding-large">THE FARM</span>
+    <div class="hero-title"><span class="hero-script">The Farm</span></div>
   </div>
 </div>
 
@@ -1400,7 +1596,7 @@ main ul li::before {
 <!-- Third Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container">
   <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide w3-black w3-padding-large">CONTACT</span>
+    <div class="hero-title"><span class="hero-script">Contact</span></div>
   </div>
 </div>
 
@@ -1428,7 +1624,7 @@ main ul li::before {
 </main>
 
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+<footer class="w3-center w3-padding-64 site-footer">
   <a href="#home" class="w3-button w3-light-grey"><i aria-hidden="true" class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
     <a href="https://www.facebook.com/PinegarFarms" aria-label="Pinegar Farms on Facebook"><i aria-hidden="true" class="fa fa-facebook-official w3-hover-opacity"></i></a>
@@ -1448,7 +1644,16 @@ function myFunction() {
     } else {
         navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
     }
+    // Show the venue name in the navbar once the hero title has scrolled up under it
+    var brand = document.getElementById("navBrand");
+    var heroTitle = document.querySelector("#home .hero-title");
+    if (heroTitle.getBoundingClientRect().bottom < navbar.offsetHeight) {
+        brand.classList.add("is-visible");
+    } else {
+        brand.classList.remove("is-visible");
+    }
 }
+myFunction(); // set the right state if the page loads already scrolled down
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
