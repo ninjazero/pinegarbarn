@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-56Y5L029JZ"></script>
 <script>
@@ -10,23 +12,43 @@
   gtag('config', 'G-56Y5L029JZ');
 </script>
 <title>The Barn at Pinegar Farms - Loomis, California</title>
-<meta name="description" content="Book the Barn at Pinegar Farms for your next kids birthday party or event. This small farm boasts a spacious outdoor lawn, pool, orchard, animals, game room, and more to make your next event a blast.">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="/images/favicon.png">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="description" content="Book the Barn at Pinegar Farms in Loomis, CA for weddings, private pool parties, kids birthday parties, reunions, and camp-outs. A small farm venue with a pool, orchard, vineyard, game room, and spacious lawns.">
+<link rel="canonical" href="https://thebarnatpinegarfarms.us/">
+
+<!-- Social sharing previews (Facebook, iMessage, Slack, X) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Barn at Pinegar Farms">
+<meta property="og:url" content="https://thebarnatpinegarfarms.us/">
+<meta property="og:title" content="The Barn at Pinegar Farms - Loomis, California">
+<meta property="og:description" content="Weddings, private pool parties, kids birthday parties, and more at a small farm venue in Loomis, CA.">
+<meta property="og:image" content="https://thebarnatpinegarfarms.us/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aerial view of the Barn at Pinegar Farms with the lawn, orchard, vineyard, and pool">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=PT+Serif:wght@400;700&family=Great+Vibes&family=Lexend:wght@600&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org/",
+    "@context": "https://schema.org",
     "@type": "EventVenue",
-    "image": [
-      "https://thebarnatpinegarfarms.us/images/barn.jpg",
-      "https://thebarnatpinegarfarms.us/images/barn-photos/barn-4.jpeg",
-      "https://thebarnatpinegarfarms.us/images/barn-photos/barn-8.jpeg"
-      ],
     "name": "The Barn at Pinegar Farms",
+    "url": "https://thebarnatpinegarfarms.us/",
+    "telephone": "+19162246742",
+    "email": "judypinegar@gmail.com",
+    "description": "A small farm event venue in Loomis, California, under 10 minutes from I-80. Host weddings, private pool parties, kids birthday parties, reunions, and camp-outs with a pool, orchard, vineyard, air conditioned barn, upstairs game room with billiards, and 2.5 acres of lawn.",
+    "image": [
+      "https://thebarnatpinegarfarms.us/images/og-image.jpg",
+      "https://thebarnatpinegarfarms.us/images/barn-photos/property-19.jpg",
+      "https://thebarnatpinegarfarms.us/images/barn-photos/property-23.jpg",
+      "https://thebarnatpinegarfarms.us/images/barn-photos/property-20.jpg",
+      "https://thebarnatpinegarfarms.us/images/barn-photos/barn-37.jpg",
+      "https://thebarnatpinegarfarms.us/images/barn-photos/wedding-landscape.jpg",
+      "https://thebarnatpinegarfarms.us/images/barn-photos/pool-party-6.jpg"
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "9195 Vista Ct",
@@ -40,20 +62,27 @@
       "latitude": 38.815783,
       "longitude": -121.132993
     },
-    "url": "https://thebarnatpinegarfarms.us",
-    "telephone": "+19162246742",
-    "description": "Host your next event at the Barn at Pinegar Farms. Located under 10 minutes from I-80 in Loomis this impressive small farm boasts spacious outdoor areas, exotic pool party atmosphere, Outdoor entertainment areas and a large game room located upstairs in barn with a full sized billiards table and other games. It is an amazing setting for kid’s birthday parties with rented inflatable bounce houses, and room to run. But The Barn has also hosted up to100 adults for the day and weekend country campouts!.",
-    "keywords": [
-      "Birthday Parties",
-      "Outdoor Events",
-      "Pool Parties"
-      ]
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Swimming pool", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Air conditioned barn", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Game room with billiards table", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Orchard and vineyard", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Trampoline", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Free parking", "value": true}
+    ],
+    "sameAs": [
+      "https://www.facebook.com/PinegarFarms",
+      "https://swimply.com/pooldetails/57572"
+    ],
+    "keywords": "weddings, pool parties, birthday parties, kids events, reunions, camp-outs, outdoor events, Loomis"
   }
 </script>
 <style>
 html {
   scroll-behavior: smooth;
 }
+/* Images keep their proportions; width/height attributes only reserve space while loading */
+img {height: auto;}
 
 /* Theme colors: wedding pink across the site, pool blue for swimming */
 :root {
@@ -61,6 +90,7 @@ html {
   --wedding-pink: #C2185B;
   --wedding-pink-dark: #8E1246;
   --accent: var(--wedding-pink);
+  --accent-dark: var(--wedding-pink-dark);
 }
 body {font-family: "Lato", sans-serif;}
 h1, h2, h3, h4, h5, h6 {font-family: "PT Serif", Georgia, serif;}
@@ -328,8 +358,25 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   margin-bottom: 1rem;
   border-radius: 16px 0 16px 0; /* rounded top-left and bottom-right */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
 }
 .button .fa {margin-right: 8px;}
+
+/* Button states: hover darkens and lifts, keyboard focus gets a ring, press sinks */
+.button:hover {
+  background-color: var(--accent-dark);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.button:active {
+  background-color: var(--accent-dark);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(1px);
+}
 
 /* Smaller, quieter gray button for vendor links */
 .button.button-secondary {
@@ -341,7 +388,16 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f1f1f1;
   color: #333;
 }
-.button.button-secondary:hover {background-color: #e2e2e2;}
+.button.button-secondary:hover {
+  background-color: #e2e2e2;
+  color: #222;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+.button.button-secondary:focus-visible {outline-color: #6b6b6b;}
+.button.button-secondary:active {
+  background-color: #d6d6d6;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.15);
+}
 .button.button-secondary .button-icon-end {font-size: 12px;}
 .button .button-svg {
   width: 1.3em;
@@ -452,7 +508,27 @@ main ul li::before {
   background-color: transparent;
 }
 .cta-box > :last-child {margin-bottom: 0;}
-.cta-box .note-box {margin-top: 0;} /* the button's bottom margin already spaces it */
+.cta-box .note-box {margin-top: 0;}
+/* Phone and email under the book buttons, for visitors without an email app */
+.cta-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 18px;
+  margin: 0 0 16px;
+  font-size: 15px;
+}
+.cta-contact a {
+  color: var(--accent-dark);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cta-contact a:hover, .cta-contact a:focus-visible {text-decoration: underline;}
+.cta-contact .fa {
+  margin-right: 6px;
+  color: var(--accent);
+} /* the button's bottom margin already spaces it */
 
 /* Subtle note box for the asterisk footnotes */
 .note-box {
@@ -730,6 +806,7 @@ main {overflow-x: clip;}
 /* Pool party section */
 .pool-party-band {
   --accent: var(--pool-blue);
+  --accent-dark: #0D47A1;
   background-color: #e3f4f6;
   position: relative;
   z-index: 1; /* keeps the shadow above the neighboring sections */
@@ -775,6 +852,21 @@ main {overflow-x: clip;}
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 .collage-link:hover {background-color: #f1f1f1;}
+.collage-link:active {background-color: #e2e2e2;}
+.collage-link:focus-visible,
+.scroll-down:focus-visible,
+.video-teaser:focus-visible,
+.gallery-nav:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.scroll-down:active {background-color: rgba(0, 0, 0, 0.9);}
+.video-teaser:active .video-play {background-color: var(--accent-dark);}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {transition: none;}
+  .button:active {transform: none;}
+}
 .collage-link {white-space: nowrap;}
 
 @media (max-width: 600px) {
@@ -818,11 +910,11 @@ main {overflow-x: clip;}
 <div class="bgimg-1 w3-display-container hero" id="home">
   <div class="hero-title w3-animate-opacity"><span class="hero-script">The Barn</span><svg class="hero-flourish" viewBox="0 0 160 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M8 8h50"/><path d="M58 8c4 0 6-4 10-4s5 4 2 5-4-2-1-3"/><path d="M152 8h-50"/><path d="M102 8c-4 0-6-4-10-4s-5 4-2 5 4-2 1-3"/><path d="M80 4.5l3.5 3.5-3.5 3.5-3.5-3.5z" fill="currentColor"/></svg><span class="hero-sub">at Pinegar Farms</span></div>
   <div class="side-collage hero-collage w3-animate-opacity">
-    <img class="side-collage-tall" src="/images/barn-photos/wedding-orchard.jpg" alt="Bride and groom in orchard">
-    <img src="/images/barn-photos/pool-party-6.jpg" alt="Evening pool party">
-    <img src="/images/barn-photos/barn-29.jpg" alt="Red grapes on the vine">
-    <img src="/images/barn-photos/luau-shower-5.jpg" alt="Balloon arch on the lawn">
-    <img src="/images/barn-photos/property-23.jpg" alt="Aerial view of the barn and vineyard">
+    <img width="500" height="551" class="side-collage-tall" src="/images/barn-photos/wedding-orchard.jpg" alt="Bride and groom in orchard">
+    <img width="1120" height="747" src="/images/barn-photos/pool-party-6.jpg" alt="Evening pool party">
+    <img width="1440" height="961" src="/images/barn-photos/barn-29.jpg" alt="Red grapes on the vine">
+    <img width="1120" height="747" src="/images/barn-photos/luau-shower-5.jpg" alt="Balloon arch on the lawn">
+    <img width="1024" height="683" src="/images/barn-photos/property-23.jpg" alt="Aerial view of the barn and vineyard">
   </div>
   <a class="scroll-down" href="#about" aria-label="Scroll down to content"><i aria-hidden="true" class="fa fa-chevron-down"></i></a>
 </div>
@@ -838,14 +930,14 @@ main {overflow-x: clip;}
   <div class="w3-row w3-margin-bottom">
     <div class="w3-col m4 w3-right margin-top--large">
       <button class="video-teaser" onclick="openYouTube('z7k93PdnsLM')" title="Play video tour" aria-label="Play video tour of the Barn at Pinegar Farms">
-        <img src="/images/barn-photos/property-19.jpg" class="w3-round w3-image" alt="Aerial view of the Barn at Pinegar Farms">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-19.jpg" class="w3-round w3-image" alt="Aerial view of the Barn at Pinegar Farms">
         <span class="video-play"><i aria-hidden="true" class="fa fa-play"></i></span>
       </button>
       <div class="side-collage">
-        <img class="side-collage-tall" src="/images/barn-photos/property-22.jpg" alt="Aerial view of the grounds">
-        <img src="/images/barn-photos/barn-35.jpg" alt="The barn">
+        <img width="747" height="1120" loading="lazy" class="side-collage-tall" src="/images/barn-photos/property-22.jpg" alt="Aerial view of the grounds">
+        <img width="1280" height="854" loading="lazy" src="/images/barn-photos/barn-35.jpg" alt="The barn">
         <div class="collage-last">
-          <img src="/images/barn-photos/barn-37.jpg" alt="Game room with billiards table">
+          <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/barn-37.jpg" alt="Game room with billiards table">
           <a class="collage-link" href="#portfolio" aria-label="More photos"><i aria-hidden="true" class="fa fa-th"></i> More</a>
         </div>
       </div>
@@ -866,6 +958,10 @@ main {overflow-x: clip;}
       </ul>
       <div class="cta-box">
         <a class="button" href="mailto:judypinegar@gmail.com?subject=I'd%20Like%20to%20Book%20an%20Event%20at%20the%20Barn&body=Please%20provide%20your%20name%2C%20contact%20info%2C%20the%20dates%2C%20type%20of%20event%2C%20estimated%20amount%20of%20guests%2C%20and%20any%20other%20questions%20you%20might%20have%20for%20me.%20%0A%0ASincerely%2C%0AJudy%20Pinegar"><i aria-hidden="true" class="fa fa-calendar-check-o"></i>Book Your Event Today</a>
+        <p class="cta-contact">
+          <a href="tel:+19162246742"><i aria-hidden="true" class="fa fa-phone"></i>(916) 224-6742</a>
+          <a href="mailto:judypinegar@gmail.com"><i aria-hidden="true" class="fa fa-envelope"></i>judypinegar@gmail.com</a>
+        </p>
         <p class="note-box"><i aria-hidden="true" class="fa fa-info-circle note-icon"></i><span>Venue Insurance is available; Liability Waiver required. Amenities such as bouncy houses may be rented locally and furnished by the renter.</span></p>
       </div>
     </div>
@@ -874,12 +970,12 @@ main {overflow-x: clip;}
     <h2 class="w3-left section-heading"><span class="heading-icon"><svg class="heading-svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="15" r="5.5"/><circle cx="15.5" cy="15" r="5.5"/><path fill="currentColor" stroke="none" d="M12 8.5c-.3-.3-3.5-2.6-3.5-4.6 0-1 .8-1.9 1.8-1.9.7 0 1.3.4 1.7 1 .4-.6 1-1 1.7-1 1 0 1.8.9 1.8 1.9 0 2-3.2 4.3-3.5 4.6z"/></svg></span>Book a Wedding</h2>
     <div class="w3-row margin-bottom--large">
       <div class="w3-col m4 w3-right margin-top--large">
-        <img src="/images/wedding.jpeg" class="w3-round w3-image" alt="Wedding at the Barn at Pinegar Farms" height="auto">
+        <img width="500" height="333" loading="lazy" src="/images/wedding.jpeg" class="w3-round w3-image" alt="Wedding at the Barn at Pinegar Farms">
         <div class="side-collage">
-          <img class="side-collage-tall" src="/images/barn-photos/wedding-dress.jpg" alt="Wedding dress hanging from tree">
-          <img src="/images/barn-photos/wedding-tables.jpg" alt="Staged table for wedding">
+          <img width="778" height="847" loading="lazy" class="side-collage-tall" src="/images/barn-photos/wedding-dress.jpg" alt="Wedding dress hanging from tree">
+          <img width="1000" height="667" loading="lazy" src="/images/barn-photos/wedding-tables.jpg" alt="Staged table for wedding">
           <div class="collage-last">
-            <img src="/images/barn-photos/wedding-grounds.jpg" alt="Picture of wedding grounds">
+            <img width="650" height="433" loading="lazy" src="/images/barn-photos/wedding-grounds.jpg" alt="Picture of wedding grounds">
             <a class="collage-link" href="#portfolio" onclick="document.getElementById('weddingsTab').click()" aria-label="More wedding photos"><i aria-hidden="true" class="fa fa-th"></i> More</a>
           </div>
         </div>
@@ -896,6 +992,10 @@ main {overflow-x: clip;}
         </ul>
         <div class="cta-box">
           <a class="button" href="mailto:judypinegar@gmail.com?subject=I'd%20Like%20to%20Book%20a%20Wedding%20at%20the%20Barn&body=Please%20provide%20your%20name%2C%20contact%20info%2C%20the%20dates%2C%20estimated%20amount%20of%20guests%2C%20and%20any%20other%20questions%20you%20might%20have%20for%20me.%20%0A%0ASincerely%2C%0AJudy%20Pinegar"><svg class="button-svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="15" r="5.5"/><circle cx="15.5" cy="15" r="5.5"/><path fill="currentColor" stroke="none" d="M12 8.5c-.3-.3-3.5-2.6-3.5-4.6 0-1 .8-1.9 1.8-1.9.7 0 1.3.4 1.7 1 .4-.6 1-1 1.7-1 1 0 1.8.9 1.8 1.9 0 2-3.2 4.3-3.5 4.6z"/></svg>Book Your Wedding Today</a>
+          <p class="cta-contact">
+            <a href="tel:+19162246742"><i aria-hidden="true" class="fa fa-phone"></i>(916) 224-6742</a>
+            <a href="mailto:judypinegar@gmail.com"><i aria-hidden="true" class="fa fa-envelope"></i>judypinegar@gmail.com</a>
+          </p>
           <p class="note-box"><i aria-hidden="true" class="fa fa-info-circle note-icon"></i><strong>Book your wedding at the Barn at Pinegar Farms and win a free honeymoon to Mexico or Las Vegas.</strong></p>
         </div>
       </div>
@@ -908,15 +1008,15 @@ main {overflow-x: clip;}
   <div class="w3-content w3-container w3-padding-64">
     <h2 class="section-heading"><span class="heading-icon"><svg class="heading-svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-linecap="round"><path d="M9.6 21.5c2.2-3.6 3.1-8 2.9-12.8" fill="none" stroke-width="2"/><path d="M12.5 8.5C9 5.3 4.4 5.8 1.8 10.4c3-2 6.6-2.4 10.7-1.9z" stroke="none"/><path d="M12.5 8.5c3.5-3.2 8.1-2.7 10.7 1.9-3-2-6.6-2.4-10.7-1.9z" stroke="none"/><path d="M12.5 8.5C11.6 4.3 8.2 2 4.4 3c3.1.6 5.6 2.6 8.1 5.5z" stroke="none"/><path d="M12.5 8.5c.9-4.2 4.3-6.5 8.1-5.5-3.1.6-5.6 2.6-8.1 5.5z" stroke="none"/><path d="M4.5 22c2.4-1.2 5-1.8 7.5-1.8s5.1.6 7.5 1.8" fill="none" stroke-width="1.6"/></svg></span>Book a Pool Party</h2>
     <div class="pool-collage">
-      <img class="pool-collage-main" src="/images/barn-photos/property-20.jpg" alt="Aerial view of the pool">
+      <img width="1120" height="747" loading="lazy" class="pool-collage-main" src="/images/barn-photos/property-20.jpg" alt="Aerial view of the pool">
       <button class="video-teaser" onclick="openMux('B1xHyHETlGVG101xZHAlkCKHcGvXwfXVmVH01fXVGRX6E')" title="Play pool party video" aria-label="Play pool party video">
-        <img src="/images/pool-party-video.jpg" alt="Pool party on the deck">
+        <img width="960" height="540" loading="lazy" src="/images/pool-party-video.jpg" alt="Pool party on the deck">
         <span class="video-play"><i aria-hidden="true" class="fa fa-play"></i></span>
       </button>
-      <img src="/images/barn-photos/pool-party-1.jpg" alt="Pool party fun">
-      <img src="/images/barn-photos/property-7.jpg" alt="Pool and palm trees">
+      <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/pool-party-1.jpg" alt="Pool party fun">
+      <img width="1024" height="683" loading="lazy" src="/images/barn-photos/property-7.jpg" alt="Pool and palm trees">
       <div class="collage-last">
-        <img src="/images/barn-photos/property-21.jpg" alt="Aerial view of the pool and orchard">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-21.jpg" alt="Aerial view of the pool and orchard">
         <a class="collage-link" href="#portfolio" onclick="document.getElementById('poolPartiesTab').click()"><i aria-hidden="true" class="fa fa-th"></i> All photos</a>
       </div>
     </div>
@@ -940,7 +1040,7 @@ main {overflow-x: clip;}
   <h2 class="w3-left section-heading section-heading--muted"><span class="heading-icon heading-icon--muted"><i aria-hidden="true" class="fa fa-magic"></i></span>Book Our Magician</h2>
   <div class="w3-row section-end">
     <div class="w3-col m4 w3-left margin-top--large">
-      <img src="/images/charlie-and-barb.jpeg" class="w3-round w3-image" alt="Charlie and Barb Showing Magic Trick" height="auto">
+      <img width="1024" height="981" loading="lazy" src="/images/charlie-and-barb.jpeg" class="w3-round w3-image" alt="Charlie and Barb Showing Magic Trick">
     </div>
     <div class="w3-col m8 w3-padding-large">
       <p>We've teamed up with Mr. Illusion himself to make your next birthday party out of this world. If you are interested in booking this great add on please <a href="#contact">contact us</a> for special rates.</p>
@@ -956,7 +1056,7 @@ main {overflow-x: clip;}
   <h2 class="w3-left section-heading section-heading--muted"><span class="heading-icon heading-icon--muted"><i aria-hidden="true" class="fa fa-music"></i></span>Book a Band</h2>
   <div class="w3-row">
     <div class="w3-col m4 w3-right margin-top--large">
-      <img src="/images/alpenmeister.jpeg" class="w3-round w3-image" alt="Alpenmeister Party Band" height="auto">
+      <img width="800" height="573" loading="lazy" src="/images/alpenmeister.jpeg" class="w3-round w3-image" alt="Alpenmeister Party Band">
     </div>
     <div class="w3-col m8 w3-padding-large">
       <h3>Alpenmeisters Octoberfest Party Band</h3>
@@ -967,7 +1067,7 @@ main {overflow-x: clip;}
   <hr class="item-divider">
   <div class="w3-row section-end">
     <div class="w3-col m4 w3-right margin-top--large">
-      <img src="/images/moon-glow.jpeg" class="w3-round w3-image" alt="Moon Glow Band" height="auto">
+      <img width="800" height="532" loading="lazy" src="/images/moon-glow.jpeg" class="w3-round w3-image" alt="Moon Glow Band">
     </div>
     <div class="w3-col m8 w3-padding-large">
       <h3>Moon Glow Band</h3>
@@ -980,7 +1080,7 @@ main {overflow-x: clip;}
   <h2 class="w3-left section-heading section-heading--muted"><span class="heading-icon heading-icon--muted"><i aria-hidden="true" class="fa fa-cutlery"></i></span>Book Food and Drinks</h2>
   <div class="w3-row">
     <div class="w3-col m4 w3-right margin-top--large">
-      <img src="/images/margaritaman.jpeg" class="w3-round w3-image" alt="Margarita Man" height="auto">
+      <img width="600" height="502" loading="lazy" src="/images/margaritaman.jpeg" class="w3-round w3-image" alt="Margarita Man">
     </div>
     <div class="w3-col m8 w3-padding-large">
       <h3>Margarita Man</h3>
@@ -992,7 +1092,7 @@ main {overflow-x: clip;}
   <hr class="item-divider">
   <div class="w3-row section-end">
     <div class="w3-col m4 w3-right margin-top--large">
-      <img src="/images/cateredtoyou.png" class="w3-round w3-image" alt="Catered to You Food Images" height="auto">
+      <img width="400" height="227" loading="lazy" src="/images/cateredtoyou.png" class="w3-round w3-image" alt="Catered to You Food Images">
     </div>
     <div class="w3-col m8 w3-padding-large">
       <h3>Catered to You</h3>
@@ -1028,37 +1128,37 @@ main {overflow-x: clip;}
   <div id="Weddings" class="tabcontent" style="display: block;">
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/wedding-boots.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Accent shot of boots">
+        <img width="1000" height="667" loading="lazy" src="/images/barn-photos/wedding-boots.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Accent shot of boots">
       </div>
   
       <div class="w3-col m3">
-        <img src="/images/barn-photos/wedding-dress.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Wedding dress hanging from tree">
+        <img width="778" height="847" loading="lazy" src="/images/barn-photos/wedding-dress.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Wedding dress hanging from tree">
       </div>
   
       <div class="w3-col m3">
-        <img src="/images/barn-photos/wedding-grounds.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Picture of wedding grounds">
+        <img width="650" height="433" loading="lazy" src="/images/barn-photos/wedding-grounds.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Picture of wedding grounds">
       </div>
   
       <div class="w3-col m3">
-        <img src="/images/barn-photos/wedding-landscape.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Picture of bride and groom at Pinegar Farms">
+        <img width="650" height="522" loading="lazy" src="/images/barn-photos/wedding-landscape.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Picture of bride and groom at Pinegar Farms">
       </div>
     </div>
   
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/wedding-orchard.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bride and groom in orchard">
+        <img width="500" height="551" loading="lazy" src="/images/barn-photos/wedding-orchard.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bride and groom in orchard">
       </div>
   
       <div class="w3-col m3">
-        <img src="/images/barn-photos/wedding-portrait.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bride and groom photo">
+        <img width="498" height="522" loading="lazy" src="/images/barn-photos/wedding-portrait.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bride and groom photo">
       </div>
   
       <div class="w3-col m3">
-        <img src="/images/barn-photos/wedding-tables-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Staged tables for wedding">
+        <img width="1000" height="667" loading="lazy" src="/images/barn-photos/wedding-tables-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Staged tables for wedding">
       </div>
   
       <div class="w3-col m3">
-        <img src="/images/barn-photos/wedding-tables.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Staged table for wedding">
+        <img width="1000" height="667" loading="lazy" src="/images/barn-photos/wedding-tables.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Staged table for wedding">
       </div>
     </div>
   </div>
@@ -1066,133 +1166,133 @@ main {overflow-x: clip;}
   <div id="Events" class="tabcontent">
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Tiki decor">
+        <img width="1280" height="854" loading="lazy" src="/images/barn-photos/luau-shower-1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Tiki decor">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Leis on the deck railing">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/luau-shower-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Leis on the deck railing">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aloha party decorations">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/luau-shower-3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aloha party decorations">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Flower garland in the trees">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Balloon arch on the lawn">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Advice and wishes table">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Party tables under the trees">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Beach babe baby shower sign">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/luau-shower-4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Flower garland in the trees">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-9.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Guests in the shade">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/luau-shower-5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Balloon arch on the lawn">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-10.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Food set up in the barn">
+        <img width="1280" height="854" loading="lazy" src="/images/barn-photos/luau-shower-6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Advice and wishes table">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-11.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Party setup in the barn">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/luau-shower-7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Party tables under the trees">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-12.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Gift table in the barn">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/luau-shower-13.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Drink station in the barn">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-4.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Events on the Lawn">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/baby-shower-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Baby Shower">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/baby-shower-3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Baby Shower">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/luau-shower-8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Beach babe baby shower sign">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/grad-100-1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Graduation">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/luau-shower-9.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Guests in the shade">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/grad-100-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Graduation">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/luau-shower-10.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Food set up in the barn">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/grad-100-6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Graduation">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/luau-shower-11.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Party setup in the barn">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/grad-100-7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Graduation">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/party1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Lawn Party">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/food1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Catered event">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/birthday1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday Party">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/pinata.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday Piñata">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/luau-shower-12.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Gift table in the barn">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/birthdaygirl.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday Girl">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/luau-shower-13.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Drink station in the barn">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/birthday2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday in the barn">
+        <img width="1280" height="720" loading="lazy" src="/images/barn-photos/barn-4.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Events on the Lawn">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/birthday3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday Party">
+        <img width="900" height="634" loading="lazy" src="/images/barn-photos/baby-shower-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Baby Shower">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/birthday4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday decorations">
+        <img width="900" height="1028" loading="lazy" src="/images/barn-photos/baby-shower-3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Baby Shower">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/cupcakes.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday cupcakes">
+        <img width="900" height="632" loading="lazy" src="/images/barn-photos/grad-100-1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Graduation">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="900" height="920" loading="lazy" src="/images/barn-photos/grad-100-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Graduation">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="900" height="832" loading="lazy" src="/images/barn-photos/grad-100-6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Graduation">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="900" height="611" loading="lazy" src="/images/barn-photos/grad-100-7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Graduation">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="700" height="992" loading="lazy" src="/images/barn-photos/party1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Lawn Party">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="700" height="700" loading="lazy" src="/images/barn-photos/food1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Catered event">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="700" height="723" loading="lazy" src="/images/barn-photos/birthday1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday Party">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="700" height="721" loading="lazy" src="/images/barn-photos/pinata.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday Piñata">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="700" height="787" loading="lazy" src="/images/barn-photos/birthdaygirl.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday Girl">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="700" height="716" loading="lazy" src="/images/barn-photos/birthday2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday in the barn">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="700" height="559" loading="lazy" src="/images/barn-photos/birthday3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday Party">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="700" height="345" loading="lazy" src="/images/barn-photos/birthday4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday decorations">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="700" height="281" loading="lazy" src="/images/barn-photos/cupcakes.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Birthday cupcakes">
       </div>
     </div>
   </div>
@@ -1200,151 +1300,151 @@ main {overflow-x: clip;}
   <div id="Farm" class="tabcontent">
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-26.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Grape vines">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/barn-26.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Grape vines">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-27.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sunflower">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/barn-27.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sunflower">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-28.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Green grapes">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/barn-28.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Green grapes">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-29.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Red grapes">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-30.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Asian pears">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-31.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Open lawn and fruit trees">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-32.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Garden paths">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-33.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Driveway to the barn">
+        <img width="1440" height="961" loading="lazy" src="/images/barn-photos/barn-29.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Red grapes">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-34.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Olive tree">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/barn-30.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Asian pears">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-35.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The barn">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/barn-31.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Open lawn and fruit trees">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-36.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Upstairs game room">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/barn-32.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Garden paths">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-37.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Game room with billiards table">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-38.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Billiards table">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-39.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Game room and billiards">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-40.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Upstairs game room lounge">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-41.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the barn">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/barn-33.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Driveway to the barn">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-1.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Barn at Pinegar Farm">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/barn-34.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Olive tree">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-3.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Rent a Bouncy House">
+        <img width="1280" height="854" loading="lazy" src="/images/barn-photos/barn-35.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The barn">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-25.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Lemon tree">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/barn-36.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Upstairs game room">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-5.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Enjoy the Pool Area">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-6.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Cater or Potluck Your Event">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-7.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Farm Atmosphere">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-8.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Take a Dip in the Pool">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-10.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Kids Toys">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/barn-37.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Game room with billiards table">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-11.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Fun in the Sun">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/barn-38.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Billiards table">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-12.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A Littel Shade">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/barn-39.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Game room and billiards">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-18.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Tractor">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/barn-40.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Upstairs game room lounge">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-19.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Tractors">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-21.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Flower beds">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-22.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Poppies">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-23.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Vines">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-24.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Barn">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/barn-41.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the barn">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/recroom.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Barns Rec Room">
+        <img width="598" height="575" loading="lazy" src="/images/barn-photos/barn-1.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Barn at Pinegar Farm">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="640" height="630" loading="lazy" src="/images/barn-photos/barn-3.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Rent a Bouncy House">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="800" height="533" loading="lazy" src="/images/barn-photos/barn-25.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Lemon tree">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1024" height="768" loading="lazy" src="/images/barn-photos/barn-5.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Enjoy the Pool Area">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="540" height="513" loading="lazy" src="/images/barn-photos/barn-6.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Cater or Potluck Your Event">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="960" height="540" loading="lazy" src="/images/barn-photos/barn-7.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Farm Atmosphere">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="960" height="532" loading="lazy" src="/images/barn-photos/barn-8.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Take a Dip in the Pool">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="548" height="482" loading="lazy" src="/images/barn-photos/barn-10.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Kids Toys">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="749" height="816" loading="lazy" src="/images/barn-photos/barn-11.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Fun in the Sun">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1008" height="756" loading="lazy" src="/images/barn-photos/barn-12.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A Littel Shade">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="800" height="533" loading="lazy" src="/images/barn-photos/barn-18.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Tractor">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="800" height="533" loading="lazy" src="/images/barn-photos/barn-19.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Tractors">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="800" height="533" loading="lazy" src="/images/barn-photos/barn-21.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Flower beds">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="800" height="533" loading="lazy" src="/images/barn-photos/barn-22.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Poppies">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="800" height="533" loading="lazy" src="/images/barn-photos/barn-23.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Vines">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="800" height="533" loading="lazy" src="/images/barn-photos/barn-24.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Barn">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="700" height="525" loading="lazy" src="/images/barn-photos/recroom.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The Barns Rec Room">
       </div>
     </div>
   </div>
@@ -1352,51 +1452,51 @@ main {overflow-x: clip;}
   <div id="Animals" class="tabcontent">
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/dog-1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Furry party guest">
+        <img width="1440" height="961" loading="lazy" src="/images/barn-photos/dog-1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Furry party guest">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-2.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="See Animals and Rustic Farm Equipment">
+        <img width="600" height="450" loading="lazy" src="/images/barn-photos/barn-2.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="See Animals and Rustic Farm Equipment">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-9.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Live Animals">
+        <img width="523" height="596" loading="lazy" src="/images/barn-photos/barn-9.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Live Animals">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-20.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Chickens">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-16.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Tortoise">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-13.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Beware of Tortoise">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-14.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Fun with Animals">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-15.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Fun with Animals Tortoise">
+        <img width="800" height="533" loading="lazy" src="/images/barn-photos/barn-20.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Chickens">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/stanley1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Meet Stanley">
+        <img width="650" height="488" loading="lazy" src="/images/barn-photos/barn-16.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Tortoise">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/stanley2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Meet Stanley">
+        <img width="650" height="488" loading="lazy" src="/images/barn-photos/barn-13.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Beware of Tortoise">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/animals.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Meet The Kitty">
+        <img width="650" height="488" loading="lazy" src="/images/barn-photos/barn-14.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Fun with Animals">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="650" height="488" loading="lazy" src="/images/barn-photos/barn-15.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Fun with Animals Tortoise">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="900" height="803" loading="lazy" src="/images/barn-photos/stanley1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Meet Stanley">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="900" height="1074" loading="lazy" src="/images/barn-photos/stanley2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Meet Stanley">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="700" height="933" loading="lazy" src="/images/barn-photos/animals.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Meet The Kitty">
       </div>
     </div>
   </div>
@@ -1404,55 +1504,55 @@ main {overflow-x: clip;}
   <div id="PoolParties" class="tabcontent">
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/pool-party-1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool party fun">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/pool-party-1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool party fun">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/pool-party-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Poolside drinks">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/pool-party-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Poolside drinks">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/pool-party-3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool party from above">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/pool-party-3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool party from above">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/pool-party-4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the pool party">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/pool-party-5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Swimming at the pool party">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/pool-party-6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Evening pool party">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/pool-party-7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Shaded patio dining">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool overlooking the orchard">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/pool-party-4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the pool party">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The pool">
+        <img width="1280" height="853" loading="lazy" src="/images/barn-photos/pool-party-5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Swimming at the pool party">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and palm trees">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/pool-party-6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Evening pool party">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-9.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and landscaping">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/pool-party-7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Shaded patio dining">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-11.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and deck">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool overlooking the orchard">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The pool">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/property-7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and palm trees">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-9.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and landscaping">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-11.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and deck">
       </div>
     </div>
   </div>
@@ -1460,115 +1560,115 @@ main {overflow-x: clip;}
   <div id="Property" class="tabcontent">
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The house and shade trees">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/property-1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The house and shade trees">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool overlooking the orchard">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool overlooking the orchard">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Palm trees and orchard">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Palm trees and orchard">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Orchard view">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Covered bar and patio">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The pool">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and palm trees">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Orchard and lawn">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Orchard view">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-9.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and landscaping">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Covered bar and patio">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-10.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ornamental grasses by the pool">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The pool">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-11.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and deck">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/property-7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and palm trees">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-12.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Garden flowers">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-13.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Hydrangeas and orchard">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-14.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Garden path">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-15.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Vineyard view">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-16.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Grape vines">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Orchard and lawn">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-17.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Flower garden and tractors">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-9.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and landscaping">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-18.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Garden steps">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/property-10.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ornamental grasses by the pool">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-19.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the property">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-11.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pool and deck">
       </div>
 
       <div class="w3-col m3">
-        <img src="/images/barn-photos/property-20.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the pool">
-      </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-21.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the pool and orchard">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-22.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the grounds">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-23.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the barn and vineyard">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/images/barn-photos/property-24.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the orchards and lake">
+        <img width="1600" height="1067" loading="lazy" src="/images/barn-photos/property-12.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Garden flowers">
       </div>
     </div>
 
     <div class="w3-row-padding w3-center w3-section">
       <div class="w3-col m3">
-        <img src="/images/barn-photos/barn-41.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the barn">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-13.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Hydrangeas and orchard">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/property-14.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Garden path">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-15.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Vineyard view">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-16.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Grape vines">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/property-17.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Flower garden and tractors">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-18.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Garden steps">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-19.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the property">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-20.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the pool">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-21.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the pool and orchard">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="747" height="1120" loading="lazy" src="/images/barn-photos/property-22.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the grounds">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/property-23.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the barn and vineyard">
+      </div>
+
+      <div class="w3-col m3">
+        <img width="1120" height="747" loading="lazy" src="/images/barn-photos/property-24.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the orchards and lake">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img width="1024" height="683" loading="lazy" src="/images/barn-photos/barn-41.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aerial view of the barn">
       </div>
     </div>
   </div>
@@ -1607,7 +1707,7 @@ main {overflow-x: clip;}
 
   <div class="w3-row w3-padding-32 w3-section">
     <div class="w3-col m4 w3-container">
-      <img src="/images/barn-location.png" class="w3-image w3-round" style="width:100%" alt="Pin showing location of barn in California">
+      <img width="780" height="898" loading="lazy" src="/images/barn-location.jpg" class="w3-image w3-round" style="width:100%" alt="Pin showing location of barn in California">
     </div>
     <div class="w3-col m8 w3-panel">
       <div class="w3-large w3-margin-bottom">
@@ -1629,7 +1729,7 @@ main {overflow-x: clip;}
   <div class="w3-xlarge w3-section">
     <a href="https://www.facebook.com/PinegarFarms" aria-label="Pinegar Farms on Facebook"><i aria-hidden="true" class="fa fa-facebook-official w3-hover-opacity"></i></a>
   </div>
-  <p>Copyright Pinegar Farms, 2023</p>
+  <p>Copyright Pinegar Farms, <span id="copyrightYear">2026</span></p>
 </footer>
 
 <script src="/js/gallery.js"></script>
@@ -1654,6 +1754,9 @@ function myFunction() {
     }
 }
 myFunction(); // set the right state if the page loads already scrolled down
+
+// Keep the footer copyright year current
+document.getElementById("copyrightYear").textContent = new Date().getFullYear();
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
