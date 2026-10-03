@@ -1,10 +1,13 @@
 // Video modal: plays YouTube or Mux (Swimply) videos, only loading the player once it's opened
 
 var MUX_PLAYER_SRC = "https://cdn.jsdelivr.net/npm/@mux/mux-player@3";
+var videoOpener = null;
 
 function openVideo(playerHtml) {
+  videoOpener = document.activeElement;
   document.getElementById("videoFrame").innerHTML = playerHtml;
   document.getElementById("videoModal").style.display = "block";
+  document.getElementById("videoClose").focus();
 }
 
 function openYouTube(videoId) {
@@ -25,10 +28,14 @@ function openMux(playbackId) {
   openVideo('<mux-player playback-id="' + playbackId + '" autoplay></mux-player>');
 }
 
-// Removing the player stops playback
+// Removing the player stops playback; focus returns to the button that opened it
 function closeVideo() {
   document.getElementById("videoModal").style.display = "none";
   document.getElementById("videoFrame").innerHTML = "";
+  if (videoOpener) {
+    videoOpener.focus();
+    videoOpener = null;
+  }
 }
 
 // Esc closes the video

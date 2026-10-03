@@ -2,6 +2,7 @@
 
 var galleryImages = [];
 var galleryIndex = 0;
+var galleryOpener = null;
 
 // Tabbed interface.
 function openPics(evt, picName) {
@@ -22,13 +23,16 @@ function openPics(evt, picName) {
 function onClick(element) {
   galleryImages = Array.prototype.slice.call(element.closest(".tabcontent").getElementsByTagName("img"));
   galleryIndex = galleryImages.indexOf(element);
+  galleryOpener = element;
   showImage();
   document.getElementById("modal01").style.display = "block";
+  document.getElementById("modalClose").focus();
 }
 
 function showImage() {
   var image = galleryImages[galleryIndex];
   document.getElementById("img01").src = image.src;
+  document.getElementById("img01").alt = image.alt;
   document.getElementById("caption").textContent = image.alt;
 }
 
@@ -38,13 +42,30 @@ function changeImage(step) {
   showImage();
 }
 
+// Close the modal and return keyboard focus to the photo that opened it
 function closeModal() {
   document.getElementById("modal01").style.display = "none";
+  if (galleryOpener) {
+    galleryOpener.focus();
+    galleryOpener = null;
+  }
 }
 
 function isModalOpen() {
   return document.getElementById("modal01").style.display === "block";
 }
+
+// Make gallery photos reachable with Tab and openable with Enter or Space
+Array.prototype.forEach.call(document.querySelectorAll(".tabcontent img"), function(image) {
+  image.tabIndex = 0;
+  image.setAttribute("role", "button");
+  image.addEventListener("keydown", function(event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onClick(image);
+    }
+  });
+});
 
 // Keyboard: left/right arrows to navigate, Esc to close
 document.addEventListener("keydown", function(event) {

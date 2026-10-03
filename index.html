@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-56Y5L029JZ"></script>
@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=PT+Serif:wght@400;700&family=Great+Vibes&family=Lexend:wght@600&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="application/ld+json">
   {
@@ -54,11 +54,21 @@
 html {
   scroll-behavior: smooth;
 }
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+
+/* Theme colors: wedding pink across the site, pool blue for swimming */
+:root {
+  --pool-blue: #1565C0;
+  --wedding-pink: #C2185B;
+  --wedding-pink-dark: #8E1246;
+  --accent: var(--wedding-pink);
+}
+body {font-family: "Lato", sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-family: "PT Serif", Georgia, serif;}
+strong, b {font-weight: 700;}
 body, html {
   height: 100%;
   color: #222;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 /* Create a Parallax Effect */
@@ -72,7 +82,7 @@ body, html {
 /* First image (Logo. Full height) */
 .bgimg-1 {
   background-image: url('/images/barn.jpg');
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 /* Second image (Portfolio) */
@@ -92,13 +102,132 @@ body, html {
 
 .w3-bar {background-color: #fff;}
 
+/* Navigation links in a darker shade of the theme pink (w3-button's hover uses !important) */
+nav .w3-bar-item {color: var(--wedding-pink-dark);}
+nav .w3-bar-item:hover {
+  background-color: var(--wedding-pink-dark) !important;
+  color: #fff !important;
+}
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
   .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: scroll;
+  }
+  .bgimg-2, .bgimg-3 {
     min-height: 400px;
   }
 }
+
+/* Hero: title, photo collage, and a bouncing arrow down to the content */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 80px 16px 64px;
+}
+.side-collage.hero-collage {
+  width: 540px;
+  max-width: 100%;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: 130px 130px;
+  /* Highly transparent frosted container behind the photos */
+  padding: 12px;
+  border-radius: 6px 6px 6px 32px;
+  background-color: rgba(20, 24, 30, 0.3);
+  border: 1px solid #aaa;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+@media (max-width: 600px) {
+  .side-collage.hero-collage {grid-template-rows: 100px 100px;}
+}
+.hero-collage img {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.hero-collage .side-collage-tall {border-bottom-left-radius: 20px;} /* nests inside the container's 32px corner (32 - 12px padding) */
+.scroll-down {
+  position: relative;
+  z-index: 2;
+  margin-top: -40px; /* pulls up past the hero's 24px gap to overlap the collage's bottom edge */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 20px;
+  line-height: 48px;
+  text-align: center;
+  animation: bounce 2s ease-in-out infinite;
+}
+.scroll-down:hover {background-color: rgba(0, 0, 0, 0.8);}
+/* Hero title: white script on frosted charcoal glass with the brand's diagonal corners */
+.hero-title {
+  text-align: center;
+  padding: 38px 64px 32px;
+  border-radius: 32px 0 32px 0;
+  background-color: rgba(20, 24, 30, 0.75);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.85);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+/* Thin white frame inset 0.5rem inside the panel, following its corners */
+.hero-title::before {
+  content: "";
+  position: absolute;
+  inset: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px 0 24px 0;
+  pointer-events: none;
+}
+.hero-script {
+  display: block;
+  font-family: "Great Vibes", cursive;
+  font-size: 72px;
+  line-height: 0.9;
+}
+.hero-flourish {
+  display: block;
+  width: 160px;
+  height: 16px;
+  margin: 6px auto 2px;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.6));
+}
+.hero-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  .hero-title {
+    padding: 28px 28px 24px;
+    border-radius: 24px 0 24px 0;
+  }
+  .hero-title::before {border-radius: 16px 0 16px 0;}
+  .hero-script {font-size: 52px;}
+  .hero-flourish {width: 120px;}
+  .hero-sub {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+}
+@keyframes bounce {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(10px);}
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-down {animation: none;}
+}
+/* Keep the banner heading clear of the fixed navbar when scrolled to */
+#about {scroll-margin-top: 44px;}
 
 /* Custom Spacing Classes */
 .margin-top {margin-top: 1rem;}
@@ -114,7 +243,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Custom Button */
 .button {
-  background-color: #4CAF50; /* Green */
+  background-color: var(--accent);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -122,6 +251,154 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin-bottom: 1rem;
+  border-radius: 16px 0 16px 0; /* rounded top-left and bottom-right */
+}
+.button .fa {margin-right: 8px;}
+
+/* Smaller, quieter gray button for vendor links */
+.button.button-secondary {
+  padding: 8px 18px;
+  font-size: 14px;
+  margin-bottom: 0;
+  border: 1px solid #ccc;
+  border-radius: 10px 0 10px 0;
+  background-color: #f1f1f1;
+  color: #333;
+}
+.button.button-secondary:hover {background-color: #e2e2e2;}
+.button.button-secondary .button-icon-end {font-size: 12px;}
+.button .button-svg {
+  width: 1.3em;
+  height: 1.3em;
+  margin-right: 8px;
+  vertical-align: -0.3em;
+}
+.button .button-icon-end {
+  margin-right: 0;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+/* Main page heading on a full width light pink banner */
+.heading-banner {
+  padding: 32px 0;
+  background-color: #FBE4EC;
+  color: #222;
+  position: relative;
+  z-index: 1; /* keeps the shadow above the neighboring sections */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid #fff; /* crisp edge between the band and its shadow */
+}
+.heading-banner h1 {
+  margin: 0 auto;
+  font-family: "Lexend", "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.3;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .heading-banner h1 {font-size: 32px;}
+}
+/* Small gap between the banner and the about content (overrides w3-padding-64's top) */
+.about-content {padding-top: 2.5rem !important;}
+
+/* Section headings: icon badge with an accent line across the page */
+.section-heading {
+  width: 100%;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--accent);
+}
+.heading-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
+  margin-right: 12px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 0.85em;
+  vertical-align: middle;
+}
+/* Gray icon badges for the vendor sections */
+.heading-icon--muted {background-color: #6b6b6b;}
+.section-heading--muted {border-bottom-color: #6b6b6b;}
+.heading-icon .heading-svg {
+  width: 1.15em;
+  height: 1.15em;
+}
+
+/* Subtle divider between items within a section */
+.item-divider {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+/* Large space after the last row of a section */
+.section-end {margin-bottom: 4rem;}
+
+/* Chevron bullets in the section's theme color */
+main ul {
+  list-style: none;
+  padding-left: 4px;
+}
+main ul li {
+  padding-left: 22px;
+  line-height: 1.5;
+}
+main ul li::before {
+  content: "\f054"; /* Font Awesome chevron-right */
+  font-family: FontAwesome;
+  display: inline-block;
+  width: 22px;
+  margin-left: -22px;
+  font-size: 11px;
+  vertical-align: 1px;
+  color: var(--accent);
+}
+
+/* Outlined box around each call-to-action button and its info */
+.cta-box {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 16px 0 16px 0;
+  background-color: transparent;
+}
+.cta-box > :last-child {margin-bottom: 0;}
+.cta-box .note-box {margin-top: 0;} /* the button's bottom margin already spaces it */
+
+/* Subtle note box for the asterisk footnotes */
+.note-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  background-color: #F5F7FA;
+  font-size: 15px;
+}
+.note-icon {
+  color: var(--accent);
+  font-size: 18px;
+  line-height: 24px; /* matches the note text's first line (15px x 1.6) */
+}
+
+/* Text for screen readers only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 /* Style the tab */
@@ -136,7 +413,6 @@ h1, h2, h3, h4, h5, h6 {
   background-color: inherit;
   float: left;
   border: none;
-  outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
@@ -146,6 +422,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Change background color of buttons on hover */
 .tab button:hover {
   background-color: #ddd;
+}
+
+/* Visible focus for keyboard users */
+.tab button:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: -2px;
 }
 
 /* Create an active/current tablink class */
@@ -165,6 +447,11 @@ h1, h2, h3, h4, h5, h6 {
 .tabcontent img {
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+/* Space out gallery photos once they stack on small screens */
+@media (max-width: 600px) {
+  .tabcontent .w3-col {margin-bottom: 1rem;}
 }
 
 /* Previous/next arrows in the image modal */
@@ -212,7 +499,7 @@ h1, h2, h3, h4, h5, h6 {
   text-indent: 5px;
   transition: 0.3s;
 }
-.video-teaser:hover .video-play {background-color: #4CAF50;}
+.video-teaser:hover .video-play {background-color: var(--accent);}
 
 /* Video tour modal */
 #videoModal .w3-modal-content {
@@ -226,8 +513,46 @@ h1, h2, h3, h4, h5, h6 {
   border: 0;
 }
 
+/* Small photo collages in the about and wedding sections */
+.side-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 110px 110px;
+  gap: 8px;
+  margin-top: 8px;
+}
+.side-collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.side-collage-tall {grid-row: 1 / 3;}
+
+@media (max-width: 600px) {
+  .side-collage {grid-template-rows: 160px 160px;}
+}
+
 /* Pool party section */
-.pool-party-band {background-color: #e3f4f6;}
+.pool-party-band {
+  --accent: var(--pool-blue);
+  background-color: #e3f4f6;
+  position: relative;
+  z-index: 1; /* keeps the shadow above the neighboring sections */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid #fff; /* crisp edge between the band and its shadow */
+}
+.swimply-logo {
+  display: block;
+  width: 140px;
+  margin: 6px auto 0;
+  color: #222;
+}
+.swimply-logo svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .pool-collage {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -243,8 +568,8 @@ h1, h2, h3, h4, h5, h6 {
 .pool-collage img {object-fit: cover;}
 .pool-collage .video-teaser {overflow: hidden;}
 .pool-collage-main {grid-row: 1 / 3;}
-.pool-collage-last {position: relative;}
-.pool-collage-all {
+.collage-last {position: relative;}
+.collage-link {
   position: absolute;
   right: 10px;
   bottom: 10px;
@@ -255,7 +580,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
-.pool-collage-all:hover {background-color: #f1f1f1;}
+.collage-link:hover {background-color: #f1f1f1;}
 
 @media (max-width: 600px) {
   .pool-collage {
@@ -272,15 +597,15 @@ h1, h2, h3, h4, h5, h6 {
 <body>
 
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
+<nav class="w3-top" aria-label="Main">
   <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu" aria-label="Menu" aria-controls="navDemo" aria-expanded="false" id="menuToggle">
+      <i aria-hidden="true" class="fa fa-bars"></i>
     </a>
     <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PICTURES</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i aria-hidden="true" class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i aria-hidden="true" class="fa fa-th"></i> PICTURES</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i aria-hidden="true" class="fa fa-envelope"></i> CONTACT</a>
   </div>
 
   <!-- Navbar on small screens -->
@@ -289,32 +614,52 @@ h1, h2, h3, h4, h5, h6 {
     <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
   </div>
-</div>
+</nav>
+
+<main>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">THE BARN <span class="w3-hide-small">AT PINEGAR FARMS</span></span>
+<div class="bgimg-1 w3-display-container hero" id="home">
+  <div class="hero-title w3-animate-opacity"><span class="hero-script">The Barn</span><svg class="hero-flourish" viewBox="0 0 160 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M8 8h50"/><path d="M58 8c4 0 6-4 10-4s5 4 2 5-4-2-1-3"/><path d="M152 8h-50"/><path d="M102 8c-4 0-6-4-10-4s-5 4-2 5 4-2 1-3"/><path d="M80 4.5l3.5 3.5-3.5 3.5-3.5-3.5z" fill="currentColor"/></svg><span class="hero-sub">at Pinegar Farms</span></div>
+  <div class="side-collage hero-collage w3-animate-opacity">
+    <img class="side-collage-tall" src="/images/barn-photos/wedding-orchard.jpg" alt="Bride and groom in orchard">
+    <img src="/images/barn-photos/pool-party-6.jpg" alt="Evening pool party">
+    <img src="/images/barn-photos/barn-29.jpg" alt="Red grapes on the vine">
+    <img src="/images/barn-photos/luau-shower-5.jpg" alt="Balloon arch on the lawn">
+    <img src="/images/barn-photos/property-15.jpg" alt="Vineyard view">
   </div>
+  <a class="scroll-down" href="#about" aria-label="Scroll down to content"><i aria-hidden="true" class="fa fa-chevron-down"></i></a>
+</div>
+
+<!-- Full width green banner with the main heading -->
+<div class="heading-banner" id="about">
+  <h1 class="w3-content w3-container">Weddings, Kids Events, Birthday Parties, Camp-Outs, Reunions, and More...</h1>
 </div>
 
 <!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h1 class="w3-left">WEDDINGS, KIDS EVENTS, BIRTHDAY PARTIES, CAMP-OUTS, REUNIONS, AND MORE...</h1>
-  <h2 class="w3-left">Located in Loomis California</h2>
+<div class="w3-content w3-container w3-padding-64 about-content">
+  <h2 class="w3-left section-heading"><span class="heading-icon"><i aria-hidden="true" class="fa fa-map-marker"></i></span>Located in Loomis California</h2>
   <div class="w3-row w3-margin-bottom">
     <div class="w3-col m4 w3-right margin-top--large">
       <button class="video-teaser" onclick="openYouTube('z7k93PdnsLM')" title="Play video tour" aria-label="Play video tour of the Barn at Pinegar Farms">
         <img src="/images/barn-photos/property-19.jpg" class="w3-round w3-image" alt="Aerial view of the Barn at Pinegar Farms">
-        <span class="video-play"><i class="fa fa-play"></i></span>
+        <span class="video-play"><i aria-hidden="true" class="fa fa-play"></i></span>
       </button>
+      <div class="side-collage">
+        <img class="side-collage-tall" src="/images/barn-photos/property-22.jpg" alt="Aerial view of the grounds">
+        <img src="/images/barn-photos/barn-35.jpg" alt="The barn">
+        <div class="collage-last">
+          <img src="/images/barn-photos/barn-37.jpg" alt="Game room with billiards table">
+          <a class="collage-link" href="#portfolio"><i aria-hidden="true" class="fa fa-th"></i> More photos</a>
+        </div>
+      </div>
     </div>
 
     <!-- Hide this text on small devices -->
     <div class="w3-col m8 w3-padding-large">
       <p>Host your Wedding at the Barn at Pinegar Farms. Located under 10 minutes from I-80 in Loomis this impressive small farm boasts spacious outdoor areas, exotic pool party atmosphere, and a large game room located inside the barn for games and activities. It is also an amazing setting for kids birthday parties with plenty of room for inflatable bounce houses, outdoor entertainment, and room to run.</p>
       <strong>Amenities:</strong>
-      <ul>
+      <ul class="margin-bottom--large">
         <li>Swimming Pool</li>
         <li>Trampoline</li>
         <li>Open Grassy Area (2.5 acres  in total) Lots of yard games.</li>
@@ -323,28 +668,41 @@ h1, h2, h3, h4, h5, h6 {
         <li>Barn Space (upstairs and down)</li>
         <li>Free Parking</li>
       </ul>
-      <hr>
-      <a class="button" href="mailto:judypinegar@gmail.com?subject=I'd%20Like%20to%20Book%20an%20Event%20at%20the%20Barn&body=Please%20provide%20your%20name%2C%20contact%20info%2C%20the%20dates%2C%20type%20of%20event%2C%20estimated%20amount%20of%20guests%2C%20and%20any%20other%20questions%20you%20might%20have%20for%20me.%20%0A%0ASincerely%2C%0AJudy%20Pinegar">Book Your Event Today</a>
-      <p>*Venue Insurance is available; Liability Waiver required. Amenities such as bouncy houses may be rented locally and furnished by the renter.</p>
+      <div class="cta-box">
+        <a class="button" href="mailto:judypinegar@gmail.com?subject=I'd%20Like%20to%20Book%20an%20Event%20at%20the%20Barn&body=Please%20provide%20your%20name%2C%20contact%20info%2C%20the%20dates%2C%20type%20of%20event%2C%20estimated%20amount%20of%20guests%2C%20and%20any%20other%20questions%20you%20might%20have%20for%20me.%20%0A%0ASincerely%2C%0AJudy%20Pinegar"><i aria-hidden="true" class="fa fa-calendar-check-o"></i>Book Your Event Today</a>
+        <p class="note-box"><i aria-hidden="true" class="fa fa-info-circle note-icon"></i><span>Venue Insurance is available; Liability Waiver required. Amenities such as bouncy houses may be rented locally and furnished by the renter.</span></p>
+      </div>
     </div>
   </div>
-  <h2 class="w3-left">Book a Wedding</h2>
-  <div class="w3-row margin-bottom--large">
-    <div class="w3-col m4 w3-right margin-top--large">
-      <img src="/images/wedding.jpeg" class="w3-round w3-image" alt="Charlie and Barb Showing Magic Trick" height="auto">
-    </div>
-    <div class="w3-col m8 w3-padding-large">
-      <p>Looking for the perfect small venue for your wedding? Look no further. The Barn at Pinegar Farms boasts a breath taking country atmosphere. Say your vows in the midst of trees and flowers, wine and dine your guests, then dance the night away in our air conditioned barn. </p>
-      <ul class="margin-bottom--large">
-        <li>Many green outdoor spaces</li>
-        <li>Air conditioned barn</li>
-        <li>Pool</li>
-        <li>Bar</li>
-        <li>Game room</li>
-        <li>Country atmosphere</li>
-      </ul>
-      <a class="button" href="mailto:judypinegar@gmail.com?subject=I'd%20Like%20to%20Book%20a%20Wedding%20at%20the%20Barn&body=Please%20provide%20your%20name%2C%20contact%20info%2C%20the%20dates%2C%20estimated%20amount%20of%20guests%2C%20and%20any%20other%20questions%20you%20might%20have%20for%20me.%20%0A%0ASincerely%2C%0AJudy%20Pinegar">Book Your Wedding Today*</a>
-      <p><strong>* Book your wedding at the Barn at Pinegar Farms and win a free honeymoon to Mexico or Las Vegas.</strong></p>
+  <div class="wedding-section">
+    <h2 class="w3-left section-heading"><span class="heading-icon"><svg class="heading-svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="15" r="5.5"/><circle cx="15.5" cy="15" r="5.5"/><path fill="currentColor" stroke="none" d="M12 8.5c-.3-.3-3.5-2.6-3.5-4.6 0-1 .8-1.9 1.8-1.9.7 0 1.3.4 1.7 1 .4-.6 1-1 1.7-1 1 0 1.8.9 1.8 1.9 0 2-3.2 4.3-3.5 4.6z"/></svg></span>Book a Wedding</h2>
+    <div class="w3-row margin-bottom--large">
+      <div class="w3-col m4 w3-right margin-top--large">
+        <img src="/images/wedding.jpeg" class="w3-round w3-image" alt="Wedding at the Barn at Pinegar Farms" height="auto">
+        <div class="side-collage">
+          <img class="side-collage-tall" src="/images/barn-photos/wedding-dress.jpg" alt="Wedding dress hanging from tree">
+          <img src="/images/barn-photos/wedding-tables.jpg" alt="Staged table for wedding">
+          <div class="collage-last">
+            <img src="/images/barn-photos/wedding-grounds.jpg" alt="Picture of wedding grounds">
+            <a class="collage-link" href="#portfolio" onclick="document.getElementById('weddingsTab').click()"><i aria-hidden="true" class="fa fa-th"></i> More photos</a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m8 w3-padding-large">
+        <p>Looking for the perfect small venue for your wedding? Look no further. The Barn at Pinegar Farms boasts a breath taking country atmosphere. Say your vows in the midst of trees and flowers, wine and dine your guests, then dance the night away in our air conditioned barn. </p>
+        <ul class="margin-bottom--large">
+          <li>Many green outdoor spaces</li>
+          <li>Air conditioned barn</li>
+          <li>Pool</li>
+          <li>Bar</li>
+          <li>Game room</li>
+          <li>Country atmosphere</li>
+        </ul>
+        <div class="cta-box">
+          <a class="button" href="mailto:judypinegar@gmail.com?subject=I'd%20Like%20to%20Book%20a%20Wedding%20at%20the%20Barn&body=Please%20provide%20your%20name%2C%20contact%20info%2C%20the%20dates%2C%20estimated%20amount%20of%20guests%2C%20and%20any%20other%20questions%20you%20might%20have%20for%20me.%20%0A%0ASincerely%2C%0AJudy%20Pinegar"><svg class="button-svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="15" r="5.5"/><circle cx="15.5" cy="15" r="5.5"/><path fill="currentColor" stroke="none" d="M12 8.5c-.3-.3-3.5-2.6-3.5-4.6 0-1 .8-1.9 1.8-1.9.7 0 1.3.4 1.7 1 .4-.6 1-1 1.7-1 1 0 1.8.9 1.8 1.9 0 2-3.2 4.3-3.5 4.6z"/></svg>Book Your Wedding Today</a>
+          <p class="note-box"><i aria-hidden="true" class="fa fa-info-circle note-icon"></i><strong>Book your wedding at the Barn at Pinegar Farms and win a free honeymoon to Mexico or Las Vegas.</strong></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -352,35 +710,39 @@ h1, h2, h3, h4, h5, h6 {
 <!-- Pool Party Section (full width background) -->
 <div class="pool-party-band" id="pool-parties">
   <div class="w3-content w3-container w3-padding-64">
-    <h2>Book a Pool Party</h2>
+    <h2 class="section-heading"><span class="heading-icon"><svg class="heading-svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-linecap="round"><path d="M9.6 21.5c2.2-3.6 3.1-8 2.9-12.8" fill="none" stroke-width="2"/><path d="M12.5 8.5C9 5.3 4.4 5.8 1.8 10.4c3-2 6.6-2.4 10.7-1.9z" stroke="none"/><path d="M12.5 8.5c3.5-3.2 8.1-2.7 10.7 1.9-3-2-6.6-2.4-10.7-1.9z" stroke="none"/><path d="M12.5 8.5C11.6 4.3 8.2 2 4.4 3c3.1.6 5.6 2.6 8.1 5.5z" stroke="none"/><path d="M12.5 8.5c.9-4.2 4.3-6.5 8.1-5.5-3.1.6-5.6 2.6-8.1 5.5z" stroke="none"/><path d="M4.5 22c2.4-1.2 5-1.8 7.5-1.8s5.1.6 7.5 1.8" fill="none" stroke-width="1.6"/></svg></span>Book a Pool Party</h2>
     <div class="pool-collage">
       <img class="pool-collage-main" src="/images/barn-photos/property-20.jpg" alt="Aerial view of the pool">
       <button class="video-teaser" onclick="openMux('B1xHyHETlGVG101xZHAlkCKHcGvXwfXVmVH01fXVGRX6E')" title="Play pool party video" aria-label="Play pool party video">
         <img src="/images/pool-party-video.jpg" alt="Pool party on the deck">
-        <span class="video-play"><i class="fa fa-play"></i></span>
+        <span class="video-play"><i aria-hidden="true" class="fa fa-play"></i></span>
       </button>
       <img src="/images/barn-photos/pool-party-1.jpg" alt="Pool party fun">
       <img src="/images/barn-photos/property-7.jpg" alt="Pool and palm trees">
-      <div class="pool-collage-last">
+      <div class="collage-last">
         <img src="/images/barn-photos/property-21.jpg" alt="Aerial view of the pool and orchard">
-        <a class="pool-collage-all" href="#portfolio" onclick="document.getElementById('poolPartiesTab').click()"><i class="fa fa-th"></i> All photos</a>
+        <a class="collage-link" href="#portfolio" onclick="document.getElementById('poolPartiesTab').click()"><i aria-hidden="true" class="fa fa-th"></i> All photos</a>
       </div>
     </div>
     <div class="w3-row">
       <div class="w3-col m8 w3-padding-large">
-        <p>🏝️ Experience Loomis’ most vibrant backyard escape – a paradise designed for fun-seekers and ultimate hosts alike! This private pool oasis offers exclusive tranquility with lush greenery all around, where your small group or family can safely swim, play, and celebrate.</p>
+        <p>Experience Loomis’ most vibrant backyard escape – a paradise designed for fun-seekers and ultimate hosts alike! This private pool oasis offers exclusive tranquility with lush greenery all around, where your small group or family can safely swim, play, and celebrate.</p>
       </div>
       <div class="w3-col m4 w3-padding-large w3-center">
-        <p><strong>Book a Pool Party on Swimply</strong></p>
-        <a class="button" href="https://swimply.com/pooldetails/57572" target="_blank" rel="noopener">Book Now</a>
+        <div class="cta-box">
+          <p class="swimply-cta"><strong>Book a Pool Party on</strong>
+            <a class="swimply-logo" href="https://swimply.com/pooldetails/57572" target="_blank" rel="noopener" aria-label="Swimply (opens in a new tab)"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 160 39" aria-hidden="true"><path fill-rule="evenodd" d="m21.864 18.384-.155-.01a.357.357 0 0 0-.367.35.4.4 0 0 0 .071.243l.023.029c.193.217.618.497 1.167.859 1.84 1.213 5.068 3.34 5.555 7.07.556 4.257-1.058 6.686-4.163 7.937-.07.028-.074.033-.077.038-.004.006-.007.01-.082.038-2.085.778-4.963.314-8.113-.214l-.337-.057-.405-.069c-1.72-.292-3.428-.582-4.958-.683-3.137-.207-5.209-.051-9.222.89l-.195.046a.517.517 0 0 0-.369.616c.05.238.252.406.482.403q5.622-.085 9.483.596c1.16.204 2.238.409 3.247.6 2.973.564 5.345 1.014 7.434 1.014 2.798 0 11.597-1.17 10.682-9.956-.597-5.725-4.631-9.396-9.701-9.74M1.142 22.388c-.834-.095-1.432.849-.995 1.617l.07.12.092.146.11.171.13.193.097.141c.411.587.863 1.14 1.348 1.643 1.266 1.314 3.663 2.642 4.474 2.468.368-.079.463-.446.303-.757a1.9 1.9 0 0 0-.314-.407l-.145-.148-.196-.19-.308-.276-1.06-.928-.244-.218-.219-.2-.195-.182-.172-.167-.15-.154-.131-.14a4 4 0 0 1-.161-.193l-.047-.05.204.023c.29.033 1.13.061 1.863.086.51.017.967.033 1.153.047l.478.031v.012l.784.024c1.535.046 3.717-.895 3.717-1.78 0-.375-.243-.599-.575-.643-.187-.026-.402 0-.679.062l-.557.14-.082.017-.027.004-.169.018q-.207.02-.452.03l-.203.007q-.15.004-.314.005l-.338-.002-.358-.01-.247-.009-.255-.012-.263-.016c-.211-.013-.61-.03-1.075-.048l-.646-.027-.215-.009c-.682-.03-1.35-.065-1.682-.104l-.571-.071-.608-.083-.386-.057-.358-.055zm25.385-14.56c-.596-.48-.966-.996-1.068-1.28C23.417.861 15.226-1.585 10.51 2.273 5.155 6.653 6.887 13.703 8.53 15.57c2.515 2.858 3.36 2.194 3.07 1.628l-.093-.181c-1.922-3.756-3.946-7.71.697-12.491 5.534-3.644 11.003-.419 13.134 4.023q-.057.852-.26 1.302-.323.715-1.08 1.558-.566.904-.21 1.65c.215.449.803 1.08 1.556 1.49.752.412 1.693.412 2.188.225l.055-.023a.9.9 0 0 0 .244-.169.967.967 0 0 0 .052-1.31l-1.034-1.19a38 38 0 0 0 2.56-1.57q.727-.497 1.32-1.224a.95.95 0 0 0 .017-1.17.84.84 0 0 0-1.016-.267q-.662.299-1.179.38-.542.085-2.024-.404m-4.571.348c-.417-.947-1.17-1.51-1.68-1.258s-.587 1.224-.17 2.171 1.169 1.51 1.68 1.258.587-1.224.17-2.171M160 15.69c0-1.085-.784-2.17-2.025-2.17-.882 0-1.698.595-1.992 1.47l-3.659 10.505-3.658-10.505c-.326-.91-1.111-1.47-1.927-1.47-1.274 0-2.09 1.12-2.09 2.205 0 .245.032.49.13.736l5.39 14.427-.588 1.435c-.294.7-.882 1.05-1.568 1.19-.163.036-.359.036-.522.036-1.177 0-1.96.91-1.96 1.96 0 1.226 1.11 1.997 2.547 1.997 2.32 0 4.312-1.156 5.422-4.097l6.369-16.913c.098-.245.131-.526.131-.806m-24.619 6.385c0-5.638-2.979-8.86-7.084-8.86-1.953 0-3.707.911-4.932 2.557v-.175c0-1.19-.927-2.171-2.052-2.171-1.225 0-2.152.98-2.152 2.17v19.435c0 1.19.927 2.171 2.086 2.171 1.191 0 2.118-.98 2.118-2.171v-6.653c1.291 1.75 3.045 2.591 4.932 2.591 4.105 0 7.084-3.256 7.084-8.894M55.942 9.449c-1.229-1.727-5.081-2.609-7.605-2.609-5.214 0-8.402 3.244-8.402 7.157 0 5.25 4.488 6.38 8.139 7.3 2.503.63 4.613 1.161 4.613 2.853 0 1.34-1.262 2.609-3.852 2.609-2.159 0-4.052-.74-5.546-1.833-.365-.282-.83-.388-1.262-.388-1.13 0-2.225.987-2.225 2.327 0 .423.133.846.365 1.198 1.229 1.94 5.214 3.068 8.435 3.068 5.978 0 8.868-3.244 8.868-7.545 0-5.312-4.658-6.493-8.337-7.425-2.4-.609-4.383-1.112-4.383-2.587 0-1.41 1.13-2.362 3.155-2.362a9.55 9.55 0 0 1 4.882 1.34c.398.246.797.352 1.196.352 1.129 0 2.357-.916 2.357-2.256a2 2 0 0 0-.398-1.199m26.726 6.204c0-1.119-.866-2.133-2.097-2.133-.932 0-1.797.63-2.03 1.574l-2.63 9.999-3.028-9.79c-.333-1.049-1.298-1.783-2.33-1.783a2.54 2.54 0 0 0-2.43 1.783l-3.028 9.79-2.63-10a2.084 2.084 0 0 0-1.997-1.573c-1.264 0-2.13 1.05-2.13 2.133q0 .315.1.63l3.595 12.376c.366 1.259 1.53 2.168 2.795 2.168h.067c1.265 0 2.43-.91 2.796-2.168l2.829-9.545 2.829 9.545c.366 1.294 1.497 2.168 2.795 2.168h.067c1.231 0 2.396-.91 2.762-2.168l3.595-12.377q.1-.315.1-.63m33.307 2.696c0-3.48-1.752-5.132-4.695-5.132-2.447 0-4.563 1.546-5.489 3.093-.595-1.933-2.083-3.093-4.431-3.093-2.447 0-4.563 1.617-5.225 2.636v-.246c0-1.195-.925-2.18-2.05-2.18-1.223 0-2.15.985-2.15 2.18v13.005c0 1.23.927 2.215 2.084 2.215 1.19 0 2.116-.984 2.116-2.215v-9.42c.629-.949 1.852-2.003 3.307-2.003 1.72 0 2.381 1.124 2.381 2.706v8.717c0 1.23.926 2.215 2.083 2.215 1.224 0 2.149-.984 2.149-2.215v-9.455c.596-.914 1.819-1.968 3.307-1.968 1.72 0 2.381 1.124 2.381 2.706v8.717c0 1.23.926 2.215 2.083 2.215 1.224 0 2.149-.984 2.149-2.215zm-27.057-3.025c0-1.193-.96-2.176-2.127-2.176-1.269 0-2.23.983-2.23 2.176v12.988c0 1.228.961 2.211 2.161 2.211 1.235 0 2.196-.983 2.196-2.211zm53.414-6.321c0-1.186-.958-2.163-2.12-2.163-1.266 0-2.224.977-2.224 2.163v19.323c0 1.22.958 2.197 2.155 2.197a2.175 2.175 0 0 0 2.189-2.197zm-18.967 10.096c.695-1.085 2.251-1.926 3.608-1.926 2.417 0 4.038 1.996 4.038 4.903 0 2.941-1.621 4.937-4.038 4.937-1.357 0-2.913-.875-3.608-1.926zM89.329 8.866a2.606 2.606 0 0 0-2.607-2.633c-1.406 0-2.606 1.159-2.606 2.633s1.2 2.668 2.606 2.668c1.441 0 2.607-1.194 2.607-2.668" clip-rule="evenodd"></path></svg></a>
+          </p>
+          <a class="button" href="https://swimply.com/pooldetails/57572" target="_blank" rel="noopener"><svg class="button-svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="currentColor" stroke-linecap="round"><path d="M9.6 21.5c2.2-3.6 3.1-8 2.9-12.8" fill="none" stroke-width="2"/><path d="M12.5 8.5C9 5.3 4.4 5.8 1.8 10.4c3-2 6.6-2.4 10.7-1.9z" stroke="none"/><path d="M12.5 8.5c3.5-3.2 8.1-2.7 10.7 1.9-3-2-6.6-2.4-10.7-1.9z" stroke="none"/><path d="M12.5 8.5C11.6 4.3 8.2 2 4.4 3c3.1.6 5.6 2.6 8.1 5.5z" stroke="none"/><path d="M12.5 8.5c.9-4.2 4.3-6.5 8.1-5.5-3.1.6-5.6 2.6-8.1 5.5z" stroke="none"/><path d="M4.5 22c2.4-1.2 5-1.8 7.5-1.8s5.1.6 7.5 1.8" fill="none" stroke-width="1.6"/></svg>Book Now<i aria-hidden="true" class="fa fa-external-link button-icon-end"></i><span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="w3-content w3-container w3-padding-64">
-  <h2 class="w3-left">Book Our Magician</h2>
-  <div class="w3-row margin-bottom--large">
+  <h2 class="w3-left section-heading section-heading--muted"><span class="heading-icon heading-icon--muted"><i aria-hidden="true" class="fa fa-magic"></i></span>Book Our Magician</h2>
+  <div class="w3-row section-end">
     <div class="w3-col m4 w3-left margin-top--large">
       <img src="/images/charlie-and-barb.jpeg" class="w3-round w3-image" alt="Charlie and Barb Showing Magic Trick" height="auto">
     </div>
@@ -392,10 +754,10 @@ h1, h2, h3, h4, h5, h6 {
         <li>Audience Interaction</li>
         <li>Highly Recommended</li>
       </ul>
-      <a class="" href="https://misterillusion.com/">LEARN MORE ABOUT MR. ILLUSION</a>
+      <p><a class="button button-secondary" href="https://misterillusion.com/" target="_blank" rel="noopener"><i aria-hidden="true" class="fa fa-magic"></i>Learn More About Mr. Illusion<i aria-hidden="true" class="fa fa-external-link button-icon-end"></i><span class="sr-only"> (opens in a new tab)</span></a></p>
     </div>
   </div>
-  <h2 class="w3-left">Book A Band</h2>
+  <h2 class="w3-left section-heading section-heading--muted"><span class="heading-icon heading-icon--muted"><i aria-hidden="true" class="fa fa-music"></i></span>Book a Band</h2>
   <div class="w3-row">
     <div class="w3-col m4 w3-right margin-top--large">
       <img src="/images/alpenmeister.jpeg" class="w3-round w3-image" alt="Alpenmeister Party Band" height="auto">
@@ -406,7 +768,8 @@ h1, h2, h3, h4, h5, h6 {
       <p>Email <a href="mailto:tcjazzband@gmail.com">tcjazzband@gmail.com</a> for booking or call Tom Carpenter at <a href="tel:9164897868">(916) 489-7868</a>.</p>
     </div>
   </div>
-  <div class="w3-row">
+  <hr class="item-divider">
+  <div class="w3-row section-end">
     <div class="w3-col m4 w3-right margin-top--large">
       <img src="/images/moon-glow.jpeg" class="w3-round w3-image" alt="Moon Glow Band" height="auto">
     </div>
@@ -414,11 +777,11 @@ h1, h2, h3, h4, h5, h6 {
       <h3>Moon Glow Band</h3>
       <p>Make your special occasion more exciting with live music! Moon Glow is a quartet of professionals who are multi-instrumentalists and will feature sax, clarinet, flute, guitar, piano, bass, or drums. We are all vocalists. Our extensive repertoire of songs can be tailored to any event: Parties, weddings, birthdays or any holiday. Popular standards from the 1920’s through the 1980’s are our specialty. Special programs include; Patriotic, St. Patrick’s Day, Mardi Gras, Cinco DeMayo, Mothers and Fathers Day, Christmas/Holiday and New Year’s Eve. We specialize in Octoberfest music under the band name “Alpenmeisters.” Music lists take into consideration the age group of the audience and type of occasion.</p>
       <p>Email <a href="mailto:tcjazzband@gmail.com">tcjazzband@gmail.com</a> for booking or call Tom Carpenter at <a href="tel:9164897868">(916) 489-7868</a>.</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/cHNxZ1u_Jfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      <a href="https://www.youtube.com/@tomcarpenter5490/videos">View more video on YouTube</a>
+      <iframe width="560" height="315" style="max-width:100%" src="https://www.youtube.com/embed/cHNxZ1u_Jfg" title="Moon Glow Band video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <p><a class="button button-secondary" href="https://www.youtube.com/@tomcarpenter5490/videos" target="_blank" rel="noopener"><i aria-hidden="true" class="fa fa-youtube-play"></i>More Videos on YouTube<i aria-hidden="true" class="fa fa-external-link button-icon-end"></i><span class="sr-only"> (opens in a new tab)</span></a></p>
     </div>
   </div>
-  <h2 class="w3-left">Book Food and Drinks</h2>
+  <h2 class="w3-left section-heading section-heading--muted"><span class="heading-icon heading-icon--muted"><i aria-hidden="true" class="fa fa-cutlery"></i></span>Book Food and Drinks</h2>
   <div class="w3-row">
     <div class="w3-col m4 w3-right margin-top--large">
       <img src="/images/margaritaman.jpeg" class="w3-round w3-image" alt="Margarita Man" height="auto">
@@ -427,10 +790,11 @@ h1, h2, h3, h4, h5, h6 {
       <h3>Margarita Man</h3>
       <p>Purchase non-alcoholic mixes for both kids frozen drinks or adult beverages as well as frozen drink machine rentals</p>
       <p>Call <a href="tel:8885006274">(888) 500-MARG</a> or <a href="https://margaritamanrents.com/book-reservation/">book a reservation online</a></p>
-      <a href="https://margaritamanrents.com/">Visit Website</a>
+      <p><a class="button button-secondary" href="https://margaritamanrents.com/" target="_blank" rel="noopener"><i aria-hidden="true" class="fa fa-globe"></i>Visit Margarita Man<i aria-hidden="true" class="fa fa-external-link button-icon-end"></i><span class="sr-only"> (opens in a new tab)</span></a></p>
     </div>
   </div>
-  <div class="w3-row">
+  <hr class="item-divider">
+  <div class="w3-row section-end">
     <div class="w3-col m4 w3-right margin-top--large">
       <img src="/images/cateredtoyou.png" class="w3-round w3-image" alt="Catered to You Food Images" height="auto">
     </div>
@@ -438,8 +802,8 @@ h1, h2, h3, h4, h5, h6 {
       <h3>Catered to You</h3>
       <p>Catered To You is a Sacramento based food-service company that caters to events of all kinds.  We are a team of highly experienced industry professionals formed together by a mutual vision for exceptional food, service, and hospitality. Our reputation has gained accolades consisting of: Maintaining government and corporate contracts; Preferred, primary or in-house vendor & caterer for many local venues and businesses; Cooking for the governors mansion; Providing full-service catering for reputable companies and organizations such as: Flyers, McDonalds, Sacramento Association of Realtors, Edward Jones, The Nugget and more.</p>
       <p>The team at Catered To You views each event through a new lens. We understand that no two gatherings are alike and seek to reflect this through all our services. Our goal is to go above and beyond with every dish, platter, and culinary creation.</p>
-      <p>Call <a href="tel:2799770461">(279) 977-0461</a> or <a href="mailto:Info@cateredtoyoucatering.com">or email Info@cateredtoyoucatering.com</a></p>
-      <a href="https://www.cateredtoyoucatering.com/">Visit Website</a>
+      <p>Call <a href="tel:2799770461">(279) 977-0461</a> or email <a href="mailto:Info@cateredtoyoucatering.com">Info@cateredtoyoucatering.com</a></p>
+      <p><a class="button button-secondary" href="https://www.cateredtoyoucatering.com/" target="_blank" rel="noopener"><i aria-hidden="true" class="fa fa-globe"></i>Visit Catered to You<i aria-hidden="true" class="fa fa-external-link button-icon-end"></i><span class="sr-only"> (opens in a new tab)</span></a></p>
     </div>
   </div>
 </div>
@@ -453,11 +817,11 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">PICTURES</h3>
+  <h2 class="w3-center w3-xlarge section-heading"><span class="heading-icon"><i aria-hidden="true" class="fa fa-camera"></i></span>PICTURES</h2>
   <p class="w3-center"><em>Here are some pictures of the barn and property.<br> Click on the images to make them bigger</em></p><br>
 
   <div class="tab">
-    <button class="tablinks active" onclick="openPics(event, 'Weddings')">Weddings</button>
+    <button class="tablinks active" id="weddingsTab" onclick="openPics(event, 'Weddings')">Weddings</button>
     <button class="tablinks" onclick="openPics(event, 'Events')">Other Events</button>
     <button class="tablinks" onclick="openPics(event, 'Farm')">The Barn & Farm</button>
     <button class="tablinks" onclick="openPics(event, 'Animals')">Animals</button>
@@ -1015,22 +1379,22 @@ h1, h2, h3, h4, h5, h6 {
 </div>
 
 <!-- Modal for the video tour -->
-<div id="videoModal" class="w3-modal w3-black" onclick="closeVideo()">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Video"><i class="fa fa-remove"></i></span>
+<div id="videoModal" class="w3-modal w3-black" onclick="closeVideo()" role="dialog" aria-modal="true" aria-label="Video">
+  <button class="w3-button w3-large w3-black w3-display-topright" id="videoClose" title="Close Video" aria-label="Close video"><i aria-hidden="true" class="fa fa-remove"></i></button>
   <div class="w3-modal-content w3-animate-zoom w3-transparent w3-padding-64">
     <div class="video-frame" id="videoFrame"></div>
   </div>
 </div>
 
 <!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+<div id="modal01" class="w3-modal w3-black" onclick="closeModal()" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="w3-button w3-large w3-black w3-display-topright" id="modalClose" title="Close Modal Image" aria-label="Close photo"><i aria-hidden="true" class="fa fa-remove"></i></button>
   <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
+    <img id="img01" class="w3-image" alt="">
     <p id="caption" class="w3-opacity w3-large"></p>
   </div>
-  <button class="gallery-nav gallery-prev" onclick="event.stopPropagation(); changeImage(-1)" title="Previous photo" aria-label="Previous photo"><i class="fa fa-chevron-left"></i></button>
-  <button class="gallery-nav gallery-next" onclick="event.stopPropagation(); changeImage(1)" title="Next photo" aria-label="Next photo"><i class="fa fa-chevron-right"></i></button>
+  <button class="gallery-nav gallery-prev" onclick="event.stopPropagation(); changeImage(-1)" title="Previous photo" aria-label="Previous photo"><i aria-hidden="true" class="fa fa-chevron-left"></i></button>
+  <button class="gallery-nav gallery-next" onclick="event.stopPropagation(); changeImage(1)" title="Next photo" aria-label="Next photo"><i aria-hidden="true" class="fa fa-chevron-right"></i></button>
 </div>
 
 <!-- Third Parallax Image with Portfolio Text -->
@@ -1042,7 +1406,7 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">BOOK YOUR EVENT TODAY</h3>
+  <h2 class="w3-center w3-xlarge section-heading"><span class="heading-icon"><i aria-hidden="true" class="fa fa-calendar-check-o"></i></span>BOOK YOUR EVENT TODAY</h2>
   <p class="w3-center"><em>I am looking forward to helping your plan your next event.</em></p>
 
   <div class="w3-row w3-padding-32 w3-section">
@@ -1051,9 +1415,9 @@ h1, h2, h3, h4, h5, h6 {
     </div>
     <div class="w3-col m8 w3-panel">
       <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Loomis, CA<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: (&#057;&#049;&#054;)&#032;&#050;&#050;&#052;&#045;&#054;&#055;&#052;&#050;<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: <a href="mailto:&#106;&#117;&#100;&#121;&#112;&#105;&#110;&#101;&#103;&#097;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;?subject=Event Booking at the Barn">&#106;&#117;&#100;&#121;&#112;&#105;&#110;&#101;&#103;&#097;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a><br>
+        <i aria-hidden="true" class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Loomis, CA<br>
+        <i aria-hidden="true" class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: (&#057;&#049;&#054;)&#032;&#050;&#050;&#052;&#045;&#054;&#055;&#052;&#050;<br>
+        <i aria-hidden="true" class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: <a href="mailto:&#106;&#117;&#100;&#121;&#112;&#105;&#110;&#101;&#103;&#097;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;?subject=Event Booking at the Barn">&#106;&#117;&#100;&#121;&#112;&#105;&#110;&#101;&#103;&#097;&#114;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a><br>
       </div>
       <!-- <p>Please use the form below to contact us with your event needs:</p> -->
       <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSch038XFhKSBmzL19Jri5VHZSKooLcub0OAgtTOWG_tY_hGhQ/viewform?embedded=true" width="640" height="850" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
@@ -1061,11 +1425,13 @@ h1, h2, h3, h4, h5, h6 {
   </div>
 </div>
 
+</main>
+
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <a href="#home" class="w3-button w3-light-grey"><i aria-hidden="true" class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <a href="https://www.facebook.com/PinegarFarms"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.facebook.com/PinegarFarms" aria-label="Pinegar Farms on Facebook"><i aria-hidden="true" class="fa fa-facebook-official w3-hover-opacity"></i></a>
   </div>
   <p>Copyright Pinegar Farms, 2023</p>
 </footer>
@@ -1087,10 +1453,13 @@ function myFunction() {
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
     var x = document.getElementById("navDemo");
+    var toggle = document.getElementById("menuToggle");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
+        toggle.setAttribute("aria-expanded", "true");
     } else {
         x.className = x.className.replace(" w3-show", "");
+        toggle.setAttribute("aria-expanded", "false");
     }
 }
 </script>
