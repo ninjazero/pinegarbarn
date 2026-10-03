@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Start the hero photo and font connections as early as possible -->
+<link rel="preload" as="image" href="/images/barn.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-56Y5L029JZ"></script>
 <script>
@@ -111,7 +116,9 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('/images/barn.jpg');
+  /* Real photo on top of a tiny blurred copy and its average color, so something shows instantly */
+  background-image: url('/images/barn.jpg'), url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAYACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAiEAACAwABBAIDAAAAAAAAAAABAwACEQQSITFREzJBYXH/xAAXAQEAAwAAAAAAAAAAAAAAAAADAAEC/8QAHBEAAwABBQAAAAAAAAAAAAAAAAECQQQREhQh/9oADAMBAAIRAxEAPwDTLmvJO9jsdeB8qw3LVrXf5IbXl7NB6bj9+Z0qxzLjWE2P4E1zclrb0rOrx+gWFwNnNQTberT6yK3Yu3GvU/asXW9tE2FRhPi3qJ2qyG9PCIwNgwHTHVUa1gYq3QK+e8IQKEkOQ7eyyTnk+5hb25h3BCEJsmT/2Q==');
+  background-color: #757479;
   min-height: 100vh;
 }
 
