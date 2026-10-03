@@ -160,6 +160,12 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #ccc;
   border-top: none;
 }
+
+/* Crop gallery thumbnails to a uniform 3:2 (full image still shows in the modal) */
+.tabcontent img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
 </style>
 </head>
 <body>
